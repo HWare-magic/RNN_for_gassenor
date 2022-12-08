@@ -1,0 +1,811 @@
+nohup: ignoring input
+./save/sensor1_gru_in70_out1_lr0.001_hc8_train0.8_test60_version0 training started Tue Nov 15 18:27:08 2022
+train  :  (1800, 71, 1, 1)
+val  :  (450, 71, 1, 1)
+test  :  (240, 71, 1, 1)
+Model Training Started ... Tue Nov 15 18:27:08 2022
+TIMESTEP_IN, TIMESTEP_OUT 70 1
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+├─GRU: 1-1                               [-1, 1, 8]                3,216
+├─Linear: 1-2                            [-1, 1, 1]                9
+==========================================================================================
+Total params: 3,225
+Trainable params: 3,225
+Non-trainable params: 0
+Total mult-adds (M): 0.00
+==========================================================================================
+Input size (MB): 0.00
+Forward/backward pass size (MB): 0.00
+Params size (MB): 0.01
+Estimated Total Size (MB): 0.01
+==========================================================================================
+LOSS is : MAE
+Epoch 0: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 53.518417, 59.222500; RMSE: 61.637970, 59.229286;
+epoch 0 time used: 0  seconds  train loss: 49.915 val rmse: 61.638 test rmse: 59.229
+Epoch 1: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 53.184219, 58.874035; RMSE: 61.296867, 58.881092;
+epoch 1 time used: 0  seconds  train loss: 49.626 val rmse: 61.297 test rmse: 58.881
+Epoch 2: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 52.755867, 58.371544; RMSE: 60.954403, 58.378510;
+epoch 2 time used: 0  seconds  train loss: 49.309 val rmse: 60.954 test rmse: 58.379
+Epoch 3: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 52.156113, 57.795612; RMSE: 60.422733, 57.801014;
+epoch 3 time used: 0  seconds  train loss: 48.909 val rmse: 60.423 test rmse: 57.801
+Epoch 4: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 51.343395, 57.081928; RMSE: 59.742966, 57.086975;
+epoch 4 time used: 0  seconds  train loss: 48.406 val rmse: 59.743 test rmse: 57.087
+Epoch 5: 
+|1    Horizon | MAPE: 100.000000, 100.000000; MAE: 50.523495, 56.156292; RMSE: 59.016731, 56.160736;
+epoch 5 time used: 0  seconds  train loss: 47.745 val rmse: 59.017 test rmse: 56.161
+Epoch 6: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 49.340752, 54.973991; RMSE: 58.042702, 54.977036;
+epoch 6 time used: 0  seconds  train loss: 46.905 val rmse: 58.043 test rmse: 54.977
+Epoch 7: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 48.113976, 53.804245; RMSE: 56.947521, 53.805923;
+epoch 7 time used: 0  seconds  train loss: 45.996 val rmse: 56.948 test rmse: 53.806
+Epoch 8: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 47.077267, 52.785934; RMSE: 56.103844, 52.786747;
+epoch 8 time used: 0  seconds  train loss: 45.125 val rmse: 56.104 test rmse: 52.787
+Epoch 9: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 46.116051, 51.783325; RMSE: 55.288822, 51.783855;
+epoch 9 time used: 0  seconds  train loss: 44.341 val rmse: 55.289 test rmse: 51.784
+Epoch 10: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 45.271107, 50.969017; RMSE: 54.593819, 50.969280;
+epoch 10 time used: 0  seconds  train loss: 43.65 val rmse: 54.594 test rmse: 50.969
+Epoch 11: 
+|1    Horizon | MAPE: 99.999988, 100.000000; MAE: 44.555164, 50.219627; RMSE: 53.990246, 50.219830;
+epoch 11 time used: 0  seconds  train loss: 43.038 val rmse: 53.99 test rmse: 50.22
+Epoch 12: 
+|1    Horizon | MAPE: 99.999988, 100.000000; MAE: 44.026276, 49.616440; RMSE: 53.488174, 49.616615;
+epoch 12 time used: 0  seconds  train loss: 42.532 val rmse: 53.488 test rmse: 49.617
+Epoch 13: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 43.642506, 49.109760; RMSE: 53.068394, 49.109875;
+epoch 13 time used: 0  seconds  train loss: 42.214 val rmse: 53.068 test rmse: 49.11
+Epoch 14: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 43.257301, 48.601624; RMSE: 52.656498, 48.601719;
+epoch 14 time used: 0  seconds  train loss: 41.925 val rmse: 52.656 test rmse: 48.602
+Epoch 15: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 42.891842, 48.098957; RMSE: 52.252598, 48.099018;
+epoch 15 time used: 0  seconds  train loss: 41.649 val rmse: 52.253 test rmse: 48.099
+Epoch 16: 
+|1    Horizon | MAPE: 99.999988, 100.000000; MAE: 42.503567, 47.600163; RMSE: 51.845501, 47.600250;
+epoch 16 time used: 0  seconds  train loss: 41.364 val rmse: 51.846 test rmse: 47.6
+Epoch 17: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 42.128201, 47.116554; RMSE: 51.440544, 47.116627;
+epoch 17 time used: 0  seconds  train loss: 41.08 val rmse: 51.441 test rmse: 47.117
+Epoch 18: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 41.754974, 46.609341; RMSE: 51.043571, 46.609440;
+epoch 18 time used: 0  seconds  train loss: 40.797 val rmse: 51.044 test rmse: 46.609
+Epoch 19: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 41.371342, 46.104038; RMSE: 50.641743, 46.104107;
+epoch 19 time used: 0  seconds  train loss: 40.525 val rmse: 50.642 test rmse: 46.104
+Epoch 20: 
+|1    Horizon | MAPE: 100.000000, 100.000000; MAE: 41.007812, 45.614876; RMSE: 50.254326, 45.615051;
+epoch 20 time used: 0  seconds  train loss: 40.243 val rmse: 50.254 test rmse: 45.615
+Epoch 21: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 40.628647, 45.108463; RMSE: 49.864529, 45.108768;
+epoch 21 time used: 0  seconds  train loss: 39.967 val rmse: 49.865 test rmse: 45.109
+Epoch 22: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 40.246826, 44.636631; RMSE: 49.455151, 44.636700;
+epoch 22 time used: 0  seconds  train loss: 39.681 val rmse: 49.455 test rmse: 44.637
+Epoch 23: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 39.868649, 44.119736; RMSE: 49.074577, 44.120026;
+epoch 23 time used: 0  seconds  train loss: 39.404 val rmse: 49.075 test rmse: 44.12
+Epoch 24: 
+|1    Horizon | MAPE: 100.000000, 100.000000; MAE: 39.494358, 43.627949; RMSE: 48.685978, 43.628113;
+epoch 24 time used: 0  seconds  train loss: 39.124 val rmse: 48.686 test rmse: 43.628
+Epoch 25: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 39.119076, 43.126877; RMSE: 48.297268, 43.127415;
+epoch 25 time used: 0  seconds  train loss: 38.838 val rmse: 48.297 test rmse: 43.127
+Epoch 26: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 38.745243, 42.626808; RMSE: 47.920471, 42.627033;
+epoch 26 time used: 0  seconds  train loss: 38.564 val rmse: 47.92 test rmse: 42.627
+Epoch 27: 
+|1    Horizon | MAPE: 99.999994, 99.838269; MAE: 38.365929, 42.110172; RMSE: 47.526089, 42.111938;
+epoch 27 time used: 0  seconds  train loss: 38.279 val rmse: 47.526 test rmse: 42.112
+Epoch 28: 
+|1    Horizon | MAPE: 99.999994, 100.000000; MAE: 37.995079, 41.649170; RMSE: 47.163727, 41.649254;
+epoch 28 time used: 0  seconds  train loss: 38.007 val rmse: 47.164 test rmse: 41.649
+Epoch 29: 
+|1    Horizon | MAPE: 99.837118, 99.861103; MAE: 37.607426, 41.149391; RMSE: 46.774548, 41.149616;
+epoch 29 time used: 0  seconds  train loss: 37.715 val rmse: 46.775 test rmse: 41.15
+Epoch 30: 
+|1    Horizon | MAPE: 99.333727, 99.439937; MAE: 37.224228, 40.652111; RMSE: 46.380455, 40.652340;
+epoch 30 time used: 0  seconds  train loss: 37.433 val rmse: 46.38 test rmse: 40.652
+Epoch 31: 
+|1    Horizon | MAPE: 96.591067, 98.443145; MAE: 36.856865, 40.161148; RMSE: 46.015217, 40.161434;
+epoch 31 time used: 0  seconds  train loss: 37.155 val rmse: 46.015 test rmse: 40.161
+Epoch 32: 
+|1    Horizon | MAPE: 55.585146, 66.220474; MAE: 36.619846, 39.732285; RMSE: 45.723934, 39.733002;
+epoch 32 time used: 0  seconds  train loss: 36.913 val rmse: 45.724 test rmse: 39.733
+Epoch 33: 
+|1    Horizon | MAPE: 55.345589, 65.672243; MAE: 36.438583, 39.403343; RMSE: 45.447239, 39.404675;
+epoch 33 time used: 0  seconds  train loss: 36.775 val rmse: 45.447 test rmse: 39.405
+Epoch 34: 
+|1    Horizon | MAPE: 55.170375, 65.113693; MAE: 36.303612, 39.068218; RMSE: 45.234413, 39.069038;
+epoch 34 time used: 0  seconds  train loss: 36.658 val rmse: 45.234 test rmse: 39.069
+Epoch 35: 
+|1    Horizon | MAPE: 54.999411, 64.525616; MAE: 36.137177, 38.715370; RMSE: 44.957249, 38.716106;
+epoch 35 time used: 0  seconds  train loss: 36.515 val rmse: 44.957 test rmse: 38.716
+Epoch 36: 
+|1    Horizon | MAPE: 54.753536, 63.963014; MAE: 35.961296, 38.377811; RMSE: 44.710522, 38.378613;
+epoch 36 time used: 0  seconds  train loss: 36.403 val rmse: 44.711 test rmse: 38.379
+Epoch 37: 
+|1    Horizon | MAPE: 54.478431, 63.347441; MAE: 35.812801, 38.008465; RMSE: 44.469315, 38.010712;
+epoch 37 time used: 0  seconds  train loss: 36.263 val rmse: 44.469 test rmse: 38.011
+Epoch 38: 
+|1    Horizon | MAPE: 54.233325, 62.735051; MAE: 35.608456, 37.641029; RMSE: 44.173973, 37.642960;
+epoch 38 time used: 0  seconds  train loss: 36.143 val rmse: 44.174 test rmse: 37.643
+Epoch 39: 
+|1    Horizon | MAPE: 54.004258, 62.154949; MAE: 35.445312, 37.292969; RMSE: 43.934231, 37.295139;
+epoch 39 time used: 0  seconds  train loss: 36.001 val rmse: 43.934 test rmse: 37.295
+Epoch 40: 
+|1    Horizon | MAPE: 53.855276, 61.493820; MAE: 35.295258, 36.896294; RMSE: 43.683136, 36.899734;
+epoch 40 time used: 0  seconds  train loss: 35.882 val rmse: 43.683 test rmse: 36.9
+Epoch 41: 
+|1    Horizon | MAPE: 53.636473, 60.967922; MAE: 35.118488, 36.580753; RMSE: 43.439846, 36.582920;
+epoch 41 time used: 0  seconds  train loss: 35.771 val rmse: 43.44 test rmse: 36.583
+Epoch 42: 
+|1    Horizon | MAPE: 53.267068, 60.304111; MAE: 34.887077, 36.182468; RMSE: 43.123672, 36.184864;
+epoch 42 time used: 0  seconds  train loss: 35.596 val rmse: 43.124 test rmse: 36.185
+Epoch 43: 
+|1    Horizon | MAPE: 53.136969, 59.691805; MAE: 34.730869, 35.815079; RMSE: 42.864723, 35.818790;
+epoch 43 time used: 0  seconds  train loss: 35.464 val rmse: 42.865 test rmse: 35.819
+Epoch 44: 
+|1    Horizon | MAPE: 52.896672, 59.049582; MAE: 34.556911, 35.429745; RMSE: 42.591068, 35.431660;
+epoch 44 time used: 0  seconds  train loss: 35.339 val rmse: 42.591 test rmse: 35.432
+Epoch 45: 
+|1    Horizon | MAPE: 52.646011, 58.393669; MAE: 34.379082, 35.036198; RMSE: 42.357365, 35.038589;
+epoch 45 time used: 0  seconds  train loss: 35.186 val rmse: 42.357 test rmse: 35.039
+Epoch 46: 
+|1    Horizon | MAPE: 52.365422, 57.622665; MAE: 34.189434, 34.573597; RMSE: 42.088886, 34.580570;
+epoch 46 time used: 0  seconds  train loss: 35.039 val rmse: 42.089 test rmse: 34.581
+Epoch 47: 
+|1    Horizon | MAPE: 52.041179, 57.013446; MAE: 33.986553, 34.208073; RMSE: 41.806072, 34.214664;
+epoch 47 time used: 0  seconds  train loss: 34.89 val rmse: 41.806 test rmse: 34.215
+Epoch 48: 
+|1    Horizon | MAPE: 51.986599, 56.404483; MAE: 33.835327, 33.842690; RMSE: 41.543777, 33.846207;
+epoch 48 time used: 0  seconds  train loss: 34.752 val rmse: 41.544 test rmse: 33.846
+Epoch 49: 
+|1    Horizon | MAPE: 51.589513, 55.798918; MAE: 33.622578, 33.479351; RMSE: 41.272160, 33.482197;
+epoch 49 time used: 0  seconds  train loss: 34.598 val rmse: 41.272 test rmse: 33.482
+Epoch 50: 
+|1    Horizon | MAPE: 51.558346, 55.068243; MAE: 33.442310, 33.040947; RMSE: 40.978901, 33.046307;
+epoch 50 time used: 0  seconds  train loss: 34.477 val rmse: 40.979 test rmse: 33.046
+Epoch 51: 
+|1    Horizon | MAPE: 51.181126, 54.256082; MAE: 33.224464, 32.553650; RMSE: 40.707832, 32.564629;
+epoch 51 time used: 0  seconds  train loss: 34.333 val rmse: 40.708 test rmse: 32.565
+Epoch 52: 
+|1    Horizon | MAPE: 50.752729, 53.780174; MAE: 32.992237, 32.268105; RMSE: 40.424515, 32.271233;
+epoch 52 time used: 0  seconds  train loss: 34.162 val rmse: 40.425 test rmse: 32.271
+Epoch 53: 
+|1    Horizon | MAPE: 50.751096, 53.029478; MAE: 32.847912, 31.817688; RMSE: 40.178547, 31.825771;
+epoch 53 time used: 0  seconds  train loss: 34.036 val rmse: 40.179 test rmse: 31.826
+Epoch 54: 
+|1    Horizon | MAPE: 50.415027, 52.337861; MAE: 32.660263, 31.402718; RMSE: 39.939159, 31.410500;
+epoch 54 time used: 0  seconds  train loss: 33.882 val rmse: 39.939 test rmse: 31.41
+Epoch 55: 
+|1    Horizon | MAPE: 50.392646, 51.701170; MAE: 32.481922, 31.020699; RMSE: 39.641167, 31.027304;
+epoch 55 time used: 0  seconds  train loss: 33.764 val rmse: 39.641 test rmse: 31.027
+Epoch 56: 
+|1    Horizon | MAPE: 49.659294, 51.094759; MAE: 32.197575, 30.656857; RMSE: 39.348934, 30.661491;
+epoch 56 time used: 0  seconds  train loss: 33.594 val rmse: 39.349 test rmse: 30.661
+Epoch 57: 
+|1    Horizon | MAPE: 49.559793, 50.217593; MAE: 32.068146, 30.130558; RMSE: 39.162964, 30.140610;
+epoch 57 time used: 0  seconds  train loss: 33.433 val rmse: 39.163 test rmse: 30.141
+Epoch 58: 
+|1    Horizon | MAPE: 49.378067, 49.643219; MAE: 31.866257, 29.785931; RMSE: 38.873020, 29.797155;
+epoch 58 time used: 0  seconds  train loss: 33.269 val rmse: 38.873 test rmse: 29.797
+Epoch 59: 
+|1    Horizon | MAPE: 49.050230, 49.013290; MAE: 31.629896, 29.407970; RMSE: 38.579620, 29.416862;
+epoch 59 time used: 0  seconds  train loss: 33.143 val rmse: 38.58 test rmse: 29.417
+Epoch 60: 
+|1    Horizon | MAPE: 49.221280, 48.617503; MAE: 31.614069, 29.170502; RMSE: 38.475636, 29.175602;
+epoch 60 time used: 0  seconds  train loss: 33.072 val rmse: 38.476 test rmse: 29.176
+Epoch 61: 
+|1    Horizon | MAPE: 49.172354, 48.028764; MAE: 31.523661, 28.817261; RMSE: 38.310612, 28.827946;
+epoch 61 time used: 0  seconds  train loss: 32.945 val rmse: 38.311 test rmse: 28.828
+Epoch 62: 
+|1    Horizon | MAPE: 49.238619, 47.516903; MAE: 31.398611, 28.510139; RMSE: 38.102707, 28.519974;
+epoch 62 time used: 0  seconds  train loss: 32.91 val rmse: 38.103 test rmse: 28.52
+Epoch 63: 
+|1    Horizon | MAPE: 48.983884, 46.541342; MAE: 31.198538, 27.924805; RMSE: 37.820118, 27.954765;
+epoch 63 time used: 0  seconds  train loss: 32.81 val rmse: 37.82 test rmse: 27.955
+Epoch 64: 
+|1    Horizon | MAPE: 48.849842, 46.208349; MAE: 31.076374, 27.725008; RMSE: 37.601593, 27.745573;
+epoch 64 time used: 0  seconds  train loss: 32.727 val rmse: 37.602 test rmse: 27.746
+Epoch 65: 
+|1    Horizon | MAPE: 48.961461, 45.651343; MAE: 31.021271, 27.390804; RMSE: 37.500694, 27.407156;
+epoch 65 time used: 0  seconds  train loss: 32.588 val rmse: 37.501 test rmse: 27.407
+Epoch 66: 
+|1    Horizon | MAPE: 48.839608, 45.055956; MAE: 30.877687, 27.033573; RMSE: 37.294392, 27.050161;
+epoch 66 time used: 0  seconds  train loss: 32.577 val rmse: 37.294 test rmse: 27.05
+Epoch 67: 
+|1    Horizon | MAPE: 48.432928, 44.516972; MAE: 30.643366, 26.710180; RMSE: 37.005177, 26.731485;
+epoch 67 time used: 0  seconds  train loss: 32.459 val rmse: 37.005 test rmse: 26.731
+Epoch 68: 
+|1    Horizon | MAPE: 48.738125, 44.018096; MAE: 30.570425, 26.410856; RMSE: 36.756348, 26.425642;
+epoch 68 time used: 0  seconds  train loss: 32.372 val rmse: 36.756 test rmse: 26.426
+Epoch 69: 
+|1    Horizon | MAPE: 48.414823, 43.553168; MAE: 30.454113, 26.131901; RMSE: 36.667107, 26.140362;
+epoch 69 time used: 0  seconds  train loss: 32.29 val rmse: 36.667 test rmse: 26.14
+Epoch 70: 
+|1    Horizon | MAPE: 48.519260, 42.879620; MAE: 30.320705, 25.727772; RMSE: 36.446068, 25.738693;
+epoch 70 time used: 0  seconds  train loss: 32.17 val rmse: 36.446 test rmse: 25.739
+Epoch 71: 
+|1    Horizon | MAPE: 48.128039, 42.061356; MAE: 30.132135, 25.236813; RMSE: 36.213554, 25.267097;
+epoch 71 time used: 0  seconds  train loss: 32.08 val rmse: 36.214 test rmse: 25.267
+Epoch 72: 
+|1    Horizon | MAPE: 48.316282, 41.519916; MAE: 30.104492, 24.911951; RMSE: 36.117771, 24.933462;
+epoch 72 time used: 0  seconds  train loss: 31.967 val rmse: 36.118 test rmse: 24.933
+Epoch 73: 
+|1    Horizon | MAPE: 48.148003, 40.961629; MAE: 29.904205, 24.576977; RMSE: 35.854317, 24.604507;
+epoch 73 time used: 0  seconds  train loss: 31.891 val rmse: 35.854 test rmse: 24.605
+Epoch 74: 
+|1    Horizon | MAPE: 48.059434, 40.131006; MAE: 29.779610, 24.078606; RMSE: 35.629368, 24.117594;
+epoch 74 time used: 0  seconds  train loss: 31.786 val rmse: 35.629 test rmse: 24.118
+Epoch 75: 
+|1    Horizon | MAPE: 48.278889, 39.529982; MAE: 29.797445, 23.717987; RMSE: 35.647625, 23.771816;
+epoch 75 time used: 0  seconds  train loss: 31.672 val rmse: 35.648 test rmse: 23.772
+Epoch 76: 
+|1    Horizon | MAPE: 48.135409, 39.280510; MAE: 29.592171, 23.568306; RMSE: 35.352085, 23.592836;
+epoch 76 time used: 0  seconds  train loss: 31.615 val rmse: 35.352 test rmse: 23.593
+Epoch 77: 
+|1    Horizon | MAPE: 47.850809, 38.233235; MAE: 29.443502, 22.939941; RMSE: 35.204338, 22.989927;
+epoch 77 time used: 0  seconds  train loss: 31.475 val rmse: 35.204 test rmse: 22.99
+Epoch 78: 
+|1    Horizon | MAPE: 47.954354, 37.800229; MAE: 29.311289, 22.680140; RMSE: 35.003479, 22.714617;
+epoch 78 time used: 0  seconds  train loss: 31.375 val rmse: 35.003 test rmse: 22.715
+Epoch 79: 
+|1    Horizon | MAPE: 47.874770, 37.254074; MAE: 29.123463, 22.352442; RMSE: 34.750343, 22.383646;
+epoch 79 time used: 0  seconds  train loss: 31.267 val rmse: 34.75 test rmse: 22.384
+Epoch 80: 
+|1    Horizon | MAPE: 47.543541, 36.801261; MAE: 28.993656, 22.080757; RMSE: 34.640724, 22.100435;
+epoch 80 time used: 0  seconds  train loss: 31.185 val rmse: 34.641 test rmse: 22.1
+Epoch 81: 
+|1    Horizon | MAPE: 47.390369, 35.922870; MAE: 28.738499, 21.553722; RMSE: 34.327034, 21.594152;
+epoch 81 time used: 0  seconds  train loss: 31.081 val rmse: 34.327 test rmse: 21.594
+Epoch 82: 
+|1    Horizon | MAPE: 47.718289, 35.512504; MAE: 28.742783, 21.307503; RMSE: 34.270901, 21.329103;
+epoch 82 time used: 0  seconds  train loss: 31.094 val rmse: 34.271 test rmse: 21.329
+Epoch 83: 
+|1    Horizon | MAPE: 47.841221, 34.786123; MAE: 28.714527, 20.871675; RMSE: 34.178951, 20.893559;
+epoch 83 time used: 0  seconds  train loss: 30.902 val rmse: 34.179 test rmse: 20.894
+Epoch 84: 
+|1    Horizon | MAPE: 47.122806, 34.148598; MAE: 28.334923, 20.489157; RMSE: 33.759457, 20.523832;
+epoch 84 time used: 0  seconds  train loss: 30.824 val rmse: 33.759 test rmse: 20.524
+Epoch 85: 
+|1    Horizon | MAPE: 47.467849, 33.488110; MAE: 28.351217, 20.092867; RMSE: 33.777145, 20.130976;
+epoch 85 time used: 0  seconds  train loss: 30.716 val rmse: 33.777 test rmse: 20.131
+Epoch 86: 
+|1    Horizon | MAPE: 47.172037, 33.141842; MAE: 28.223846, 19.885107; RMSE: 33.681129, 19.910297;
+epoch 86 time used: 0  seconds  train loss: 30.668 val rmse: 33.681 test rmse: 19.91
+Epoch 87: 
+|1    Horizon | MAPE: 47.529292, 32.503673; MAE: 28.181297, 19.502205; RMSE: 33.518070, 19.530695;
+epoch 87 time used: 0  seconds  train loss: 30.54 val rmse: 33.518 test rmse: 19.531
+Epoch 88: 
+|1    Horizon | MAPE: 47.444284, 32.377541; MAE: 28.170574, 19.426525; RMSE: 33.565155, 19.461588;
+epoch 88 time used: 0  seconds  train loss: 30.506 val rmse: 33.565 test rmse: 19.462
+Epoch 89: 
+|1    Horizon | MAPE: 47.471818, 32.067215; MAE: 28.132565, 19.240332; RMSE: 33.399681, 19.275585;
+epoch 89 time used: 0  seconds  train loss: 30.534 val rmse: 33.4 test rmse: 19.276
+Epoch 90: 
+|1    Horizon | MAPE: 47.531250, 31.849349; MAE: 28.064104, 19.109612; RMSE: 33.325577, 19.160873;
+epoch 90 time used: 0  seconds  train loss: 30.578 val rmse: 33.326 test rmse: 19.161
+Epoch 91: 
+|1    Horizon | MAPE: 47.814250, 31.457761; MAE: 28.196632, 18.874659; RMSE: 33.395580, 18.945068;
+epoch 91 time used: 0  seconds  train loss: 30.49 val rmse: 33.396 test rmse: 18.945
+Epoch 92: 
+|1    Horizon | MAPE: 47.579196, 31.467614; MAE: 27.983160, 18.880566; RMSE: 33.172279, 18.940117;
+epoch 92 time used: 0  seconds  train loss: 30.5 val rmse: 33.172 test rmse: 18.94
+Epoch 93: 
+|1    Horizon | MAPE: 47.676072, 31.278688; MAE: 28.105473, 18.767212; RMSE: 33.292809, 18.827164;
+epoch 93 time used: 0  seconds  train loss: 30.492 val rmse: 33.293 test rmse: 18.827
+Epoch 94: 
+|1    Horizon | MAPE: 47.786024, 31.307927; MAE: 28.002562, 18.784758; RMSE: 33.106152, 18.835850;
+epoch 94 time used: 0  seconds  train loss: 30.519 val rmse: 33.106 test rmse: 18.836
+Epoch 95: 
+|1    Horizon | MAPE: 47.768468, 30.883446; MAE: 28.025255, 18.530067; RMSE: 33.193535, 18.590647;
+epoch 95 time used: 0  seconds  train loss: 30.504 val rmse: 33.194 test rmse: 18.591
+Epoch 96: 
+|1    Horizon | MAPE: 47.843555, 30.685818; MAE: 28.001207, 18.411493; RMSE: 33.107048, 18.464819;
+epoch 96 time used: 0  seconds  train loss: 30.535 val rmse: 33.107 test rmse: 18.465
+Epoch 97: 
+|1    Horizon | MAPE: 47.932452, 30.506262; MAE: 27.965139, 18.303755; RMSE: 33.043728, 18.354626;
+epoch 97 time used: 0  seconds  train loss: 30.494 val rmse: 33.044 test rmse: 18.355
+Epoch 98: 
+|1    Horizon | MAPE: 47.907987, 30.393675; MAE: 27.954887, 18.236202; RMSE: 32.962391, 18.286522;
+epoch 98 time used: 0  seconds  train loss: 30.507 val rmse: 32.962 test rmse: 18.287
+Epoch 99: 
+|1    Horizon | MAPE: 48.040766, 30.135071; MAE: 27.931225, 18.081043; RMSE: 32.900986, 18.130363;
+epoch 99 time used: 0  seconds  train loss: 30.458 val rmse: 32.901 test rmse: 18.13
+Epoch 100: 
+|1    Horizon | MAPE: 47.922316, 30.049580; MAE: 27.894714, 18.029749; RMSE: 32.917912, 18.076473;
+epoch 100 time used: 0  seconds  train loss: 30.456 val rmse: 32.918 test rmse: 18.076
+Epoch 101: 
+|1    Horizon | MAPE: 48.047322, 29.644361; MAE: 27.830704, 17.786617; RMSE: 32.777988, 17.844570;
+epoch 101 time used: 0  seconds  train loss: 30.443 val rmse: 32.778 test rmse: 17.845
+Epoch 102: 
+|1    Horizon | MAPE: 47.898903, 29.278591; MAE: 27.759188, 17.567156; RMSE: 32.703255, 17.647278;
+epoch 102 time used: 0  seconds  train loss: 30.419 val rmse: 32.703 test rmse: 17.647
+Epoch 103: 
+|1    Horizon | MAPE: 48.437467, 29.208311; MAE: 27.904192, 17.524984; RMSE: 32.798031, 17.583384;
+epoch 103 time used: 0  seconds  train loss: 30.458 val rmse: 32.798 test rmse: 17.583
+Epoch 104: 
+|1    Horizon | MAPE: 48.635790, 28.926504; MAE: 27.970236, 17.355902; RMSE: 32.839050, 17.419544;
+epoch 104 time used: 0  seconds  train loss: 30.412 val rmse: 32.839 test rmse: 17.42
+Epoch 105: 
+|1    Horizon | MAPE: 48.246053, 28.808993; MAE: 27.749752, 17.285397; RMSE: 32.563309, 17.339825;
+epoch 105 time used: 0  seconds  train loss: 30.398 val rmse: 32.563 test rmse: 17.34
+Epoch 106: 
+|1    Horizon | MAPE: 48.577416, 28.399408; MAE: 27.841671, 17.039644; RMSE: 32.647732, 17.116488;
+epoch 106 time used: 0  seconds  train loss: 30.497 val rmse: 32.648 test rmse: 17.116
+Epoch 107: 
+|1    Horizon | MAPE: 48.532513, 28.192291; MAE: 27.814714, 16.915373; RMSE: 32.609913, 16.995775;
+epoch 107 time used: 0  seconds  train loss: 30.379 val rmse: 32.61 test rmse: 16.996
+Epoch 108: 
+|1    Horizon | MAPE: 48.557571, 28.273022; MAE: 27.840456, 16.963814; RMSE: 32.610111, 17.005650;
+epoch 108 time used: 0  seconds  train loss: 30.39 val rmse: 32.61 test rmse: 17.006
+Epoch 109: 
+|1    Horizon | MAPE: 48.265287, 27.483717; MAE: 27.640425, 16.490231; RMSE: 32.390453, 16.604841;
+epoch 109 time used: 0  seconds  train loss: 30.356 val rmse: 32.39 test rmse: 16.605
+Epoch 110: 
+|1    Horizon | MAPE: 48.316014, 27.666584; MAE: 27.651285, 16.599951; RMSE: 32.369183, 16.645088;
+epoch 110 time used: 0  seconds  train loss: 30.334 val rmse: 32.369 test rmse: 16.645
+Epoch 111: 
+|1    Horizon | MAPE: 48.818374, 27.489579; MAE: 27.737978, 16.493746; RMSE: 32.390789, 16.555387;
+epoch 111 time used: 0  seconds  train loss: 30.312 val rmse: 32.391 test rmse: 16.555
+Epoch 112: 
+|1    Horizon | MAPE: 48.600665, 26.954788; MAE: 27.635984, 16.172873; RMSE: 32.270321, 16.265104;
+epoch 112 time used: 0  seconds  train loss: 30.329 val rmse: 32.27 test rmse: 16.265
+Epoch 113: 
+|1    Horizon | MAPE: 48.512596, 27.008209; MAE: 27.546799, 16.204926; RMSE: 32.200504, 16.259974;
+epoch 113 time used: 0  seconds  train loss: 30.302 val rmse: 32.201 test rmse: 16.26
+Epoch 114: 
+|1    Horizon | MAPE: 48.497257, 26.673368; MAE: 27.614935, 16.004021; RMSE: 32.304859, 16.125675;
+epoch 114 time used: 0  seconds  train loss: 30.334 val rmse: 32.305 test rmse: 16.126
+Epoch 115: 
+|1    Horizon | MAPE: 48.879442, 26.454699; MAE: 27.593525, 15.872821; RMSE: 32.230030, 15.940228;
+epoch 115 time used: 0  seconds  train loss: 30.452 val rmse: 32.23 test rmse: 15.94
+Epoch 116: 
+|1    Horizon | MAPE: 48.658061, 26.343536; MAE: 27.473579, 15.806122; RMSE: 32.088264, 15.872156;
+epoch 116 time used: 0  seconds  train loss: 30.344 val rmse: 32.088 test rmse: 15.872
+Epoch 117: 
+|1    Horizon | MAPE: 48.998114, 25.847614; MAE: 27.572357, 15.508567; RMSE: 32.144871, 15.580606;
+epoch 117 time used: 0  seconds  train loss: 30.246 val rmse: 32.145 test rmse: 15.581
+Epoch 118: 
+|1    Horizon | MAPE: 48.762479, 25.857645; MAE: 27.447109, 15.514586; RMSE: 32.103992, 15.585783;
+epoch 118 time used: 0  seconds  train loss: 30.334 val rmse: 32.104 test rmse: 15.586
+Epoch 119: 
+|1    Horizon | MAPE: 48.901886, 25.313994; MAE: 27.435078, 15.188396; RMSE: 32.025333, 15.278868;
+epoch 119 time used: 0  seconds  train loss: 30.263 val rmse: 32.025 test rmse: 15.279
+Epoch 120: 
+|1    Horizon | MAPE: 49.186224, 25.004146; MAE: 27.549084, 15.002488; RMSE: 32.042675, 15.122842;
+epoch 120 time used: 0  seconds  train loss: 30.279 val rmse: 32.043 test rmse: 15.123
+Epoch 121: 
+|1    Horizon | MAPE: 49.518836, 24.905436; MAE: 27.529713, 14.943262; RMSE: 32.034023, 15.029732;
+epoch 121 time used: 0  seconds  train loss: 30.273 val rmse: 32.034 test rmse: 15.03
+Epoch 122: 
+|1    Horizon | MAPE: 49.264479, 24.818316; MAE: 27.314915, 14.890988; RMSE: 31.819370, 14.989620;
+epoch 122 time used: 0  seconds  train loss: 30.222 val rmse: 31.819 test rmse: 14.99
+Epoch 123: 
+|1    Horizon | MAPE: 49.222040, 24.129124; MAE: 27.427042, 14.477474; RMSE: 31.921705, 14.591253;
+epoch 123 time used: 0  seconds  train loss: 30.249 val rmse: 31.922 test rmse: 14.591
+Epoch 124: 
+|1    Horizon | MAPE: 49.448922, 24.344531; MAE: 27.390652, 14.606718; RMSE: 31.821835, 14.672907;
+epoch 124 time used: 0  seconds  train loss: 30.222 val rmse: 31.822 test rmse: 14.673
+Epoch 125: 
+|1    Horizon | MAPE: 49.298841, 23.876235; MAE: 27.293869, 14.325741; RMSE: 31.673704, 14.443486;
+epoch 125 time used: 0  seconds  train loss: 30.252 val rmse: 31.674 test rmse: 14.443
+Epoch 126: 
+|1    Horizon | MAPE: 49.502325, 23.880674; MAE: 27.343145, 14.328404; RMSE: 31.771894, 14.404202;
+epoch 126 time used: 0  seconds  train loss: 30.22 val rmse: 31.772 test rmse: 14.404
+Epoch 127: 
+|1    Horizon | MAPE: 49.449447, 23.793907; MAE: 27.351797, 14.276345; RMSE: 31.753038, 14.347521;
+epoch 127 time used: 0  seconds  train loss: 30.182 val rmse: 31.753 test rmse: 14.348
+Epoch 128: 
+|1    Horizon | MAPE: 49.615324, 23.494864; MAE: 27.342035, 14.096919; RMSE: 31.707174, 14.164757;
+epoch 128 time used: 0  seconds  train loss: 30.237 val rmse: 31.707 test rmse: 14.165
+Epoch 129: 
+|1    Horizon | MAPE: 50.071508, 23.191309; MAE: 27.498081, 13.914784; RMSE: 31.860037, 14.040428;
+epoch 129 time used: 0  seconds  train loss: 30.186 val rmse: 31.86 test rmse: 14.04
+Epoch 130: 
+|1    Horizon | MAPE: 49.840772, 22.715303; MAE: 27.353592, 13.629182; RMSE: 31.688475, 13.759417;
+epoch 130 time used: 0  seconds  train loss: 30.206 val rmse: 31.688 test rmse: 13.759
+Epoch 131: 
+|1    Horizon | MAPE: 49.766040, 22.899412; MAE: 27.262825, 13.739646; RMSE: 31.647331, 13.796382;
+epoch 131 time used: 0  seconds  train loss: 30.187 val rmse: 31.647 test rmse: 13.796
+Epoch 132: 
+|1    Horizon | MAPE: 50.014651, 22.253945; MAE: 27.435694, 13.352366; RMSE: 31.821302, 13.460220;
+epoch 132 time used: 0  seconds  train loss: 30.216 val rmse: 31.821 test rmse: 13.46
+Epoch 133: 
+|1    Horizon | MAPE: 49.722135, 22.084557; MAE: 27.192760, 13.250734; RMSE: 31.488621, 13.377673;
+epoch 133 time used: 0  seconds  train loss: 30.133 val rmse: 31.489 test rmse: 13.378
+Epoch 134: 
+|1    Horizon | MAPE: 50.283247, 21.771076; MAE: 27.313559, 13.062646; RMSE: 31.634855, 13.202551;
+epoch 134 time used: 0  seconds  train loss: 30.066 val rmse: 31.635 test rmse: 13.203
+Epoch 135: 
+|1    Horizon | MAPE: 50.100625, 21.607690; MAE: 27.271458, 12.964614; RMSE: 31.550932, 13.076026;
+epoch 135 time used: 0  seconds  train loss: 30.2 val rmse: 31.551 test rmse: 13.076
+Epoch 136: 
+|1    Horizon | MAPE: 50.107050, 21.187861; MAE: 27.146355, 12.712719; RMSE: 31.346251, 12.833249;
+epoch 136 time used: 0  seconds  train loss: 30.147 val rmse: 31.346 test rmse: 12.833
+Epoch 137: 
+|1    Horizon | MAPE: 50.111467, 21.707113; MAE: 27.223680, 13.024270; RMSE: 31.485889, 13.079736;
+epoch 137 time used: 0  seconds  train loss: 30.161 val rmse: 31.486 test rmse: 13.08
+Epoch 138: 
+|1    Horizon | MAPE: 50.063539, 21.195488; MAE: 27.067699, 12.717292; RMSE: 31.256958, 12.803559;
+epoch 138 time used: 0  seconds  train loss: 30.152 val rmse: 31.257 test rmse: 12.804
+Epoch 139: 
+|1    Horizon | MAPE: 50.203800, 20.689383; MAE: 27.070145, 12.413630; RMSE: 31.302061, 12.531695;
+epoch 139 time used: 0  seconds  train loss: 30.143 val rmse: 31.302 test rmse: 12.532
+Epoch 140: 
+|1    Horizon | MAPE: 50.134772, 20.313865; MAE: 27.060204, 12.188320; RMSE: 31.319893, 12.335924;
+epoch 140 time used: 0  seconds  train loss: 30.198 val rmse: 31.32 test rmse: 12.336
+Epoch 141: 
+|1    Horizon | MAPE: 50.116885, 20.566203; MAE: 27.015173, 12.339722; RMSE: 31.194452, 12.398790;
+epoch 141 time used: 0  seconds  train loss: 30.111 val rmse: 31.194 test rmse: 12.399
+Epoch 142: 
+|1    Horizon | MAPE: 50.456303, 20.242141; MAE: 26.990459, 12.145283; RMSE: 31.172445, 12.245275;
+epoch 142 time used: 0  seconds  train loss: 30.061 val rmse: 31.172 test rmse: 12.245
+Epoch 143: 
+|1    Horizon | MAPE: 50.264865, 20.187476; MAE: 26.949986, 12.112486; RMSE: 31.123762, 12.185215;
+epoch 143 time used: 0  seconds  train loss: 30.095 val rmse: 31.124 test rmse: 12.185
+Epoch 144: 
+|1    Horizon | MAPE: 50.047171, 19.459680; MAE: 26.799654, 11.675809; RMSE: 31.021048, 11.819638;
+epoch 144 time used: 0  seconds  train loss: 30.084 val rmse: 31.021 test rmse: 11.82
+Epoch 145: 
+|1    Horizon | MAPE: 50.371224, 19.415417; MAE: 26.931986, 11.649249; RMSE: 31.134487, 11.763814;
+epoch 145 time used: 0  seconds  train loss: 30.115 val rmse: 31.134 test rmse: 11.764
+Epoch 146: 
+|1    Horizon | MAPE: 50.588524, 19.415773; MAE: 27.013815, 11.649464; RMSE: 31.213802, 11.714765;
+epoch 146 time used: 0  seconds  train loss: 30.121 val rmse: 31.214 test rmse: 11.715
+Epoch 147: 
+|1    Horizon | MAPE: 50.736660, 19.311623; MAE: 26.990326, 11.586974; RMSE: 31.165323, 11.638603;
+epoch 147 time used: 0  seconds  train loss: 30.129 val rmse: 31.165 test rmse: 11.639
+Epoch 148: 
+|1    Horizon | MAPE: 50.448745, 18.895561; MAE: 26.867376, 11.337337; RMSE: 31.029299, 11.429805;
+epoch 148 time used: 0  seconds  train loss: 30.098 val rmse: 31.029 test rmse: 11.43
+Epoch 149: 
+|1    Horizon | MAPE: 50.849706, 18.772128; MAE: 26.929796, 11.263277; RMSE: 31.071138, 11.351871;
+epoch 149 time used: 0  seconds  train loss: 30.037 val rmse: 31.071 test rmse: 11.352
+Epoch 150: 
+|1    Horizon | MAPE: 50.727791, 18.647788; MAE: 26.789837, 11.188673; RMSE: 30.972725, 11.262226;
+epoch 150 time used: 0  seconds  train loss: 30.022 val rmse: 30.973 test rmse: 11.262
+Epoch 151: 
+|1    Horizon | MAPE: 50.872320, 18.552853; MAE: 26.823711, 11.131712; RMSE: 30.948727, 11.173518;
+epoch 151 time used: 0  seconds  train loss: 30.057 val rmse: 30.949 test rmse: 11.174
+Epoch 152: 
+|1    Horizon | MAPE: 50.713468, 18.317124; MAE: 26.799240, 10.990274; RMSE: 30.931540, 11.024654;
+epoch 152 time used: 0  seconds  train loss: 30.022 val rmse: 30.932 test rmse: 11.025
+Epoch 153: 
+|1    Horizon | MAPE: 50.544381, 17.909721; MAE: 26.716690, 10.745833; RMSE: 30.894609, 10.818485;
+epoch 153 time used: 0  seconds  train loss: 29.986 val rmse: 30.895 test rmse: 10.818
+Epoch 154: 
+|1    Horizon | MAPE: 51.119524, 17.862652; MAE: 26.809319, 10.717590; RMSE: 30.978571, 10.763638;
+epoch 154 time used: 0  seconds  train loss: 30.027 val rmse: 30.979 test rmse: 10.764
+Epoch 155: 
+|1    Horizon | MAPE: 51.007307, 17.539433; MAE: 26.823647, 10.523660; RMSE: 30.970940, 10.588798;
+epoch 155 time used: 0  seconds  train loss: 30.039 val rmse: 30.971 test rmse: 10.589
+Epoch 156: 
+|1    Horizon | MAPE: 51.112789, 17.221008; MAE: 26.786745, 10.332605; RMSE: 30.933325, 10.438536;
+epoch 156 time used: 0  seconds  train loss: 29.993 val rmse: 30.933 test rmse: 10.439
+Epoch 157: 
+|1    Horizon | MAPE: 50.830531, 17.355677; MAE: 26.679571, 10.413407; RMSE: 30.840996, 10.471265;
+epoch 157 time used: 0  seconds  train loss: 30.042 val rmse: 30.841 test rmse: 10.471
+Epoch 158: 
+|1    Horizon | MAPE: 50.853044, 17.001393; MAE: 26.717512, 10.200836; RMSE: 30.880823, 10.278476;
+epoch 158 time used: 0  seconds  train loss: 29.982 val rmse: 30.881 test rmse: 10.278
+Epoch 159: 
+|1    Horizon | MAPE: 50.702703, 16.980022; MAE: 26.578205, 10.188014; RMSE: 30.762400, 10.230540;
+epoch 159 time used: 0  seconds  train loss: 30.008 val rmse: 30.762 test rmse: 10.231
+Epoch 160: 
+|1    Horizon | MAPE: 50.863701, 16.808730; MAE: 26.532745, 10.085238; RMSE: 30.676691, 10.120524;
+epoch 160 time used: 0  seconds  train loss: 29.988 val rmse: 30.677 test rmse: 10.121
+Epoch 161: 
+|1    Horizon | MAPE: 50.994641, 16.625166; MAE: 26.638815, 9.975100; RMSE: 30.788750, 10.015947;
+epoch 161 time used: 0  seconds  train loss: 29.968 val rmse: 30.789 test rmse: 10.016
+Epoch 162: 
+|1    Horizon | MAPE: 50.957364, 16.503404; MAE: 26.638710, 9.902042; RMSE: 30.797049, 9.954571;
+epoch 162 time used: 0  seconds  train loss: 29.995 val rmse: 30.797 test rmse: 9.955
+Epoch 163: 
+|1    Horizon | MAPE: 51.169354, 16.501185; MAE: 26.608576, 9.900710; RMSE: 30.777672, 9.921524;
+epoch 163 time used: 0  seconds  train loss: 29.959 val rmse: 30.778 test rmse: 9.922
+Epoch 164: 
+|1    Horizon | MAPE: 51.105839, 16.331859; MAE: 26.685328, 9.799116; RMSE: 30.833120, 9.864497;
+epoch 164 time used: 0  seconds  train loss: 30.008 val rmse: 30.833 test rmse: 9.864
+Epoch 165: 
+|1    Horizon | MAPE: 51.145822, 16.327275; MAE: 26.665745, 9.796365; RMSE: 30.822626, 9.842543;
+epoch 165 time used: 0  seconds  train loss: 29.965 val rmse: 30.823 test rmse: 9.843
+Epoch 166: 
+|1    Horizon | MAPE: 51.152533, 16.210690; MAE: 26.585192, 9.726414; RMSE: 30.750017, 9.792839;
+epoch 166 time used: 0  seconds  train loss: 29.943 val rmse: 30.75 test rmse: 9.793
+Epoch 167: 
+|1    Horizon | MAPE: 51.128894, 16.354075; MAE: 26.641394, 9.812443; RMSE: 30.792458, 9.849566;
+epoch 167 time used: 0  seconds  train loss: 29.947 val rmse: 30.792 test rmse: 9.85
+Epoch 168: 
+|1    Horizon | MAPE: 50.931281, 16.291671; MAE: 26.561033, 9.775002; RMSE: 30.757881, 9.820009;
+epoch 168 time used: 0  seconds  train loss: 29.953 val rmse: 30.758 test rmse: 9.82
+Epoch 169: 
+|1    Horizon | MAPE: 51.091576, 16.431804; MAE: 26.641489, 9.859082; RMSE: 30.813044, 9.883940;
+epoch 169 time used: 0  seconds  train loss: 29.949 val rmse: 30.813 test rmse: 9.884
+Epoch 170: 
+|1    Horizon | MAPE: 51.062679, 16.525578; MAE: 26.604404, 9.915347; RMSE: 30.786713, 9.922806;
+epoch 170 time used: 0  seconds  train loss: 29.959 val rmse: 30.787 test rmse: 9.923
+Epoch 171: 
+|1    Horizon | MAPE: 51.004678, 16.506884; MAE: 26.603989, 9.904130; RMSE: 30.774923, 9.913030;
+epoch 171 time used: 0  seconds  train loss: 29.953 val rmse: 30.775 test rmse: 9.913
+Epoch 172: 
+|1    Horizon | MAPE: 51.073468, 16.365165; MAE: 26.615973, 9.819098; RMSE: 30.818562, 9.859518;
+epoch 172 time used: 0  seconds  train loss: 29.977 val rmse: 30.819 test rmse: 9.86
+Epoch 173: 
+|1    Horizon | MAPE: 51.032335, 16.606778; MAE: 26.642387, 9.964067; RMSE: 30.818432, 9.974765;
+epoch 173 time used: 0  seconds  train loss: 29.943 val rmse: 30.818 test rmse: 9.975
+Epoch 174: 
+|1    Horizon | MAPE: 51.018560, 16.629839; MAE: 26.626055, 9.977903; RMSE: 30.819111, 9.981293;
+epoch 174 time used: 0  seconds  train loss: 29.953 val rmse: 30.819 test rmse: 9.981
+Epoch 175: 
+|1    Horizon | MAPE: 51.086771, 16.401395; MAE: 26.636723, 9.840837; RMSE: 30.811554, 9.877291;
+epoch 175 time used: 0  seconds  train loss: 29.934 val rmse: 30.812 test rmse: 9.877
+Epoch 176: 
+|1    Horizon | MAPE: 51.027405, 16.491374; MAE: 26.642162, 9.894824; RMSE: 30.818995, 9.912744;
+epoch 176 time used: 0  seconds  train loss: 29.949 val rmse: 30.819 test rmse: 9.913
+Epoch 177: 
+|1    Horizon | MAPE: 50.979400, 16.569859; MAE: 26.608147, 9.941915; RMSE: 30.795040, 9.950801;
+epoch 177 time used: 0  seconds  train loss: 29.958 val rmse: 30.795 test rmse: 9.951
+Epoch 178: 
+|1    Horizon | MAPE: 51.121294, 16.588704; MAE: 26.631474, 9.953222; RMSE: 30.805510, 9.956520;
+epoch 178 time used: 0  seconds  train loss: 29.942 val rmse: 30.806 test rmse: 9.957
+Epoch 179: 
+|1    Horizon | MAPE: 50.973570, 16.479458; MAE: 26.616177, 9.887674; RMSE: 30.830957, 9.911324;
+epoch 179 time used: 0  seconds  train loss: 29.939 val rmse: 30.831 test rmse: 9.911
+Epoch 180: 
+|1    Horizon | MAPE: 51.038563, 16.616151; MAE: 26.627415, 9.969692; RMSE: 30.807896, 9.976136;
+epoch 180 time used: 0  seconds  train loss: 29.955 val rmse: 30.808 test rmse: 9.976
+Epoch 181: 
+|1    Horizon | MAPE: 51.090777, 16.410536; MAE: 26.641006, 9.846322; RMSE: 30.808994, 9.880634;
+epoch 181 time used: 0  seconds  train loss: 29.951 val rmse: 30.809 test rmse: 9.881
+Epoch 182: 
+|1    Horizon | MAPE: 50.968158, 16.559799; MAE: 26.599421, 9.935881; RMSE: 30.789518, 9.956736;
+epoch 182 time used: 0  seconds  train loss: 29.953 val rmse: 30.79 test rmse: 9.957
+Epoch 183: 
+|1    Horizon | MAPE: 50.850523, 16.584978; MAE: 26.568863, 9.950987; RMSE: 30.786425, 9.956475;
+epoch 183 time used: 0  seconds  train loss: 29.933 val rmse: 30.786 test rmse: 9.956
+Epoch 184: 
+|1    Horizon | MAPE: 51.024443, 16.550109; MAE: 26.641237, 9.930066; RMSE: 30.827652, 9.936032;
+epoch 184 time used: 0  seconds  train loss: 29.94 val rmse: 30.828 test rmse: 9.936
+Epoch 185: 
+|1    Horizon | MAPE: 50.979143, 16.656488; MAE: 26.627916, 9.993893; RMSE: 30.817743, 9.994705;
+epoch 185 time used: 0  seconds  train loss: 29.928 val rmse: 30.818 test rmse: 9.995
+Epoch 186: 
+|1    Horizon | MAPE: 50.998455, 16.610880; MAE: 26.635937, 9.966528; RMSE: 30.832167, 9.969496;
+epoch 186 time used: 0  seconds  train loss: 29.933 val rmse: 30.832 test rmse: 9.969
+Epoch 187: 
+|1    Horizon | MAPE: 51.036316, 16.578235; MAE: 26.635569, 9.946940; RMSE: 30.794485, 9.949203;
+epoch 187 time used: 0  seconds  train loss: 29.926 val rmse: 30.794 test rmse: 9.949
+Epoch 188: 
+|1    Horizon | MAPE: 50.998533, 16.595624; MAE: 26.606649, 9.957374; RMSE: 30.791224, 9.959846;
+epoch 188 time used: 0  seconds  train loss: 29.934 val rmse: 30.791 test rmse: 9.96
+Epoch 189: 
+|1    Horizon | MAPE: 50.929368, 16.510502; MAE: 26.579454, 9.906301; RMSE: 30.783365, 9.927633;
+epoch 189 time used: 0  seconds  train loss: 29.935 val rmse: 30.783 test rmse: 9.928
+Epoch 190: 
+|1    Horizon | MAPE: 50.956595, 16.628368; MAE: 26.613768, 9.977020; RMSE: 30.799957, 9.977719;
+epoch 190 time used: 0  seconds  train loss: 29.952 val rmse: 30.8 test rmse: 9.978
+Epoch 191: 
+|1    Horizon | MAPE: 51.003349, 16.455548; MAE: 26.633902, 9.873327; RMSE: 30.823769, 9.909534;
+epoch 191 time used: 0  seconds  train loss: 29.933 val rmse: 30.824 test rmse: 9.91
+Epoch 192: 
+|1    Horizon | MAPE: 51.100999, 16.612884; MAE: 26.629850, 9.967730; RMSE: 30.826368, 9.968192;
+epoch 192 time used: 0  seconds  train loss: 29.932 val rmse: 30.826 test rmse: 9.968
+Epoch 193: 
+|1    Horizon | MAPE: 50.970638, 16.686659; MAE: 26.639502, 10.011995; RMSE: 30.821350, 10.015277;
+epoch 193 time used: 0  seconds  train loss: 29.937 val rmse: 30.821 test rmse: 10.015
+Epoch 194: 
+|1    Horizon | MAPE: 50.924593, 16.622998; MAE: 26.597982, 9.973800; RMSE: 30.792351, 9.975524;
+epoch 194 time used: 0  seconds  train loss: 29.92 val rmse: 30.792 test rmse: 9.976
+Epoch 195: 
+|1    Horizon | MAPE: 50.993627, 16.542765; MAE: 26.636478, 9.925659; RMSE: 30.819508, 9.931475;
+epoch 195 time used: 0  seconds  train loss: 29.934 val rmse: 30.82 test rmse: 9.931
+Epoch 196: 
+|1    Horizon | MAPE: 50.997180, 16.588861; MAE: 26.617041, 9.953317; RMSE: 30.811295, 9.954296;
+epoch 196 time used: 0  seconds  train loss: 29.939 val rmse: 30.811 test rmse: 9.954
+Epoch 197: 
+|1    Horizon | MAPE: 50.983918, 16.569129; MAE: 26.618351, 9.941478; RMSE: 30.810970, 9.953646;
+epoch 197 time used: 0  seconds  train loss: 29.951 val rmse: 30.811 test rmse: 9.954
+Epoch 198: 
+|1    Horizon | MAPE: 50.980169, 16.594331; MAE: 26.625456, 9.956597; RMSE: 30.815807, 9.959715;
+epoch 198 time used: 0  seconds  train loss: 29.942 val rmse: 30.816 test rmse: 9.96
+Epoch 199: 
+|1    Horizon | MAPE: 50.983667, 16.606592; MAE: 26.619049, 9.963955; RMSE: 30.815628, 9.973437;
+epoch 199 time used: 0  seconds  train loss: 29.931 val rmse: 30.816 test rmse: 9.973
+Epoch 200: 
+|1    Horizon | MAPE: 50.952876, 16.645595; MAE: 26.611298, 9.987356; RMSE: 30.811945, 9.988783;
+epoch 200 time used: 0  seconds  train loss: 29.94 val rmse: 30.812 test rmse: 9.989
+Epoch 201: 
+|1    Horizon | MAPE: 50.964344, 16.620423; MAE: 26.620037, 9.972254; RMSE: 30.805351, 9.973475;
+epoch 201 time used: 0  seconds  train loss: 29.928 val rmse: 30.805 test rmse: 9.973
+Epoch 202: 
+|1    Horizon | MAPE: 50.950313, 16.645458; MAE: 26.613482, 9.987275; RMSE: 30.801495, 9.988773;
+epoch 202 time used: 0  seconds  train loss: 29.933 val rmse: 30.801 test rmse: 9.989
+Epoch 203: 
+|1    Horizon | MAPE: 50.978923, 16.620906; MAE: 26.608007, 9.972544; RMSE: 30.786333, 9.974148;
+epoch 203 time used: 0  seconds  train loss: 29.943 val rmse: 30.786 test rmse: 9.974
+Epoch 204: 
+|1    Horizon | MAPE: 50.979334, 16.631436; MAE: 26.633863, 9.978862; RMSE: 30.817450, 9.981283;
+epoch 204 time used: 0  seconds  train loss: 29.941 val rmse: 30.817 test rmse: 9.981
+Epoch 205: 
+|1    Horizon | MAPE: 51.001441, 16.653211; MAE: 26.621799, 9.991927; RMSE: 30.817005, 9.992055;
+epoch 205 time used: 0  seconds  train loss: 29.923 val rmse: 30.817 test rmse: 9.992
+Epoch 206: 
+|1    Horizon | MAPE: 50.910956, 16.665024; MAE: 26.604269, 9.999013; RMSE: 30.804205, 9.999226;
+epoch 206 time used: 0  seconds  train loss: 29.939 val rmse: 30.804 test rmse: 9.999
+Epoch 207: 
+|1    Horizon | MAPE: 50.915879, 16.655321; MAE: 26.601889, 9.993193; RMSE: 30.800819, 9.993654;
+epoch 207 time used: 0  seconds  train loss: 29.936 val rmse: 30.801 test rmse: 9.994
+Epoch 208: 
+|1    Horizon | MAPE: 50.938004, 16.647495; MAE: 26.609892, 9.988497; RMSE: 30.806200, 9.989124;
+epoch 208 time used: 0  seconds  train loss: 29.935 val rmse: 30.806 test rmse: 9.989
+Epoch 209: 
+|1    Horizon | MAPE: 50.960612, 16.624142; MAE: 26.610556, 9.974485; RMSE: 30.803059, 9.975594;
+epoch 209 time used: 0  seconds  train loss: 29.935 val rmse: 30.803 test rmse: 9.976
+Epoch 210: 
+|1    Horizon | MAPE: 50.960529, 16.644220; MAE: 26.608377, 9.986533; RMSE: 30.802891, 9.987082;
+epoch 210 time used: 0  seconds  train loss: 29.93 val rmse: 30.803 test rmse: 9.987
+Epoch 211: 
+|1    Horizon | MAPE: 50.925404, 16.658880; MAE: 26.602430, 9.995329; RMSE: 30.799324, 9.996020;
+epoch 211 time used: 0  seconds  train loss: 29.938 val rmse: 30.799 test rmse: 9.996
+Epoch 212: 
+|1    Horizon | MAPE: 50.930357, 16.618961; MAE: 26.603111, 9.971376; RMSE: 30.799137, 9.972393;
+epoch 212 time used: 0  seconds  train loss: 29.93 val rmse: 30.799 test rmse: 9.972
+Epoch 213: 
+|1    Horizon | MAPE: 50.958306, 16.630028; MAE: 26.607420, 9.978017; RMSE: 30.808899, 9.979428;
+epoch 213 time used: 0  seconds  train loss: 29.94 val rmse: 30.809 test rmse: 9.979
+Epoch 214: 
+|1    Horizon | MAPE: 50.926560, 16.635701; MAE: 26.599445, 9.981421; RMSE: 30.799929, 9.982013;
+epoch 214 time used: 0  seconds  train loss: 29.932 val rmse: 30.8 test rmse: 9.982
+Epoch 215: 
+|1    Horizon | MAPE: 50.920975, 16.626902; MAE: 26.606628, 9.976141; RMSE: 30.810801, 9.978000;
+epoch 215 time used: 0  seconds  train loss: 29.926 val rmse: 30.811 test rmse: 9.978
+Epoch 216: 
+|1    Horizon | MAPE: 50.960428, 16.590725; MAE: 26.607088, 9.954435; RMSE: 30.801262, 9.954935;
+epoch 216 time used: 0  seconds  train loss: 29.932 val rmse: 30.801 test rmse: 9.955
+Epoch 217: 
+|1    Horizon | MAPE: 51.045191, 16.605864; MAE: 26.622883, 9.963519; RMSE: 30.822584, 9.969749;
+epoch 217 time used: 0  seconds  train loss: 29.93 val rmse: 30.823 test rmse: 9.97
+Epoch 218: 
+|1    Horizon | MAPE: 50.925142, 16.688019; MAE: 26.598576, 10.012812; RMSE: 30.793779, 10.012855;
+epoch 218 time used: 0  seconds  train loss: 29.944 val rmse: 30.794 test rmse: 10.013
+Epoch 219: 
+|1    Horizon | MAPE: 50.917435, 16.639052; MAE: 26.604324, 9.983431; RMSE: 30.807323, 9.984438;
+epoch 219 time used: 0  seconds  train loss: 29.922 val rmse: 30.807 test rmse: 9.984
+Epoch 220: 
+|1    Horizon | MAPE: 50.918442, 16.636501; MAE: 26.598446, 9.981902; RMSE: 30.800945, 9.982181;
+epoch 220 time used: 0  seconds  train loss: 29.927 val rmse: 30.801 test rmse: 9.982
+Epoch 221: 
+|1    Horizon | MAPE: 50.936460, 16.616704; MAE: 26.602346, 9.970021; RMSE: 30.802721, 9.972126;
+epoch 221 time used: 0  seconds  train loss: 29.927 val rmse: 30.803 test rmse: 9.972
+Epoch 222: 
+|1    Horizon | MAPE: 50.918245, 16.643064; MAE: 26.607071, 9.985839; RMSE: 30.810963, 9.987883;
+epoch 222 time used: 0  seconds  train loss: 29.93 val rmse: 30.811 test rmse: 9.988
+Epoch 223: 
+|1    Horizon | MAPE: 50.927204, 16.660489; MAE: 26.620043, 9.996292; RMSE: 30.819399, 9.996476;
+epoch 223 time used: 0  seconds  train loss: 29.927 val rmse: 30.819 test rmse: 9.996
+Epoch 224: 
+|1    Horizon | MAPE: 50.888348, 16.688077; MAE: 26.585560, 10.012846; RMSE: 30.784515, 10.012908;
+epoch 224 time used: 0  seconds  train loss: 29.936 val rmse: 30.785 test rmse: 10.013
+Epoch 225: 
+|1    Horizon | MAPE: 50.898796, 16.706210; MAE: 26.606125, 10.023726; RMSE: 30.806267, 10.024474;
+epoch 225 time used: 0  seconds  train loss: 29.926 val rmse: 30.806 test rmse: 10.024
+Epoch 226: 
+|1    Horizon | MAPE: 50.920701, 16.641711; MAE: 26.599936, 9.985026; RMSE: 30.802036, 9.985143;
+epoch 226 time used: 0  seconds  train loss: 29.935 val rmse: 30.802 test rmse: 9.985
+Epoch 227: 
+|1    Horizon | MAPE: 50.933218, 16.622242; MAE: 26.604618, 9.973346; RMSE: 30.805761, 9.976170;
+epoch 227 time used: 0  seconds  train loss: 29.931 val rmse: 30.806 test rmse: 9.976
+Epoch 228: 
+|1    Horizon | MAPE: 50.951201, 16.612449; MAE: 26.600004, 9.967468; RMSE: 30.800303, 9.974338;
+epoch 228 time used: 0  seconds  train loss: 29.934 val rmse: 30.8 test rmse: 9.974
+Epoch 229: 
+|1    Horizon | MAPE: 50.927949, 16.649337; MAE: 26.605619, 9.989602; RMSE: 30.807543, 9.990383;
+epoch 229 time used: 0  seconds  train loss: 29.93 val rmse: 30.808 test rmse: 9.99
+Epoch 230: 
+|1    Horizon | MAPE: 50.953704, 16.618468; MAE: 26.620043, 9.971082; RMSE: 30.824137, 9.971603;
+epoch 230 time used: 0  seconds  train loss: 29.931 val rmse: 30.824 test rmse: 9.972
+Epoch 231: 
+|1    Horizon | MAPE: 50.923043, 16.640984; MAE: 26.600681, 9.984590; RMSE: 30.802654, 9.984747;
+epoch 231 time used: 0  seconds  train loss: 29.929 val rmse: 30.803 test rmse: 9.985
+Epoch 232: 
+|1    Horizon | MAPE: 50.984848, 16.662923; MAE: 26.612679, 9.997754; RMSE: 30.815802, 9.997830;
+epoch 232 time used: 0  seconds  train loss: 29.926 val rmse: 30.816 test rmse: 9.998
+Epoch 233: 
+|1    Horizon | MAPE: 50.917113, 16.660218; MAE: 26.601753, 9.996130; RMSE: 30.801443, 9.996364;
+epoch 233 time used: 0  seconds  train loss: 29.926 val rmse: 30.801 test rmse: 9.996
+Epoch 234: 
+|1    Horizon | MAPE: 50.909895, 16.652489; MAE: 26.590540, 9.991494; RMSE: 30.792450, 9.991622;
+epoch 234 time used: 0  seconds  train loss: 29.932 val rmse: 30.792 test rmse: 9.992
+Epoch 235: 
+|1    Horizon | MAPE: 50.919700, 16.669561; MAE: 26.606514, 10.001738; RMSE: 30.808558, 10.002715;
+epoch 235 time used: 0  seconds  train loss: 29.927 val rmse: 30.809 test rmse: 10.003
+Epoch 236: 
+|1    Horizon | MAPE: 50.919402, 16.700481; MAE: 26.611298, 10.020288; RMSE: 30.812077, 10.020995;
+epoch 236 time used: 0  seconds  train loss: 29.929 val rmse: 30.812 test rmse: 10.021
+Epoch 237: 
+|1    Horizon | MAPE: 50.961828, 16.659050; MAE: 26.614771, 9.995429; RMSE: 30.814867, 9.995564;
+epoch 237 time used: 0  seconds  train loss: 29.937 val rmse: 30.815 test rmse: 9.996
+Epoch 238: 
+|1    Horizon | MAPE: 50.925952, 16.685198; MAE: 26.607872, 10.011119; RMSE: 30.810268, 10.011283;
+epoch 238 time used: 0  seconds  train loss: 29.934 val rmse: 30.81 test rmse: 10.011
+Epoch 239: 
+|1    Horizon | MAPE: 50.927258, 16.655947; MAE: 26.602243, 9.993569; RMSE: 30.805334, 9.993657;
+epoch 239 time used: 0  seconds  train loss: 29.928 val rmse: 30.805 test rmse: 9.994
+Epoch 240: 
+|1    Horizon | MAPE: 50.916541, 16.674805; MAE: 26.602753, 10.004883; RMSE: 30.805500, 10.004939;
+epoch 240 time used: 0  seconds  train loss: 29.932 val rmse: 30.806 test rmse: 10.005
+Epoch 241: 
+|1    Horizon | MAPE: 50.908226, 16.723210; MAE: 26.609161, 10.033925; RMSE: 30.812300, 10.033938;
+epoch 241 time used: 0  seconds  train loss: 29.932 val rmse: 30.812 test rmse: 10.034
+Epoch 242: 
+|1    Horizon | MAPE: 50.909221, 16.689865; MAE: 26.600668, 10.013918; RMSE: 30.802937, 10.014115;
+epoch 242 time used: 0  seconds  train loss: 29.929 val rmse: 30.803 test rmse: 10.014
+Epoch 243: 
+|1    Horizon | MAPE: 50.918561, 16.654931; MAE: 26.600576, 9.992959; RMSE: 30.802969, 9.992999;
+epoch 243 time used: 0  seconds  train loss: 29.933 val rmse: 30.803 test rmse: 9.993
+Epoch 244: 
+|1    Horizon | MAPE: 50.925487, 16.649272; MAE: 26.603251, 9.989563; RMSE: 30.804739, 9.989673;
+epoch 244 time used: 0  seconds  train loss: 29.932 val rmse: 30.805 test rmse: 9.99
+Epoch 245: 
+|1    Horizon | MAPE: 50.948668, 16.632251; MAE: 26.606525, 9.979352; RMSE: 30.804136, 9.979359;
+epoch 245 time used: 0  seconds  train loss: 29.929 val rmse: 30.804 test rmse: 9.979
+Epoch 246: 
+|1    Horizon | MAPE: 50.942397, 16.635554; MAE: 26.606300, 9.981332; RMSE: 30.805218, 9.981441;
+epoch 246 time used: 0  seconds  train loss: 29.931 val rmse: 30.805 test rmse: 9.981
+Epoch 247: 
+|1    Horizon | MAPE: 50.998265, 16.667829; MAE: 26.630068, 10.000698; RMSE: 30.819654, 10.000720;
+epoch 247 time used: 0  seconds  train loss: 29.924 val rmse: 30.82 test rmse: 10.001
+Epoch 248: 
+|1    Horizon | MAPE: 50.922912, 16.678797; MAE: 26.589865, 10.007277; RMSE: 30.796000, 10.007377;
+epoch 248 time used: 0  seconds  train loss: 29.93 val rmse: 30.796 test rmse: 10.007
+Epoch 249: 
+|1    Horizon | MAPE: 50.908035, 16.679846; MAE: 26.601967, 10.007907; RMSE: 30.806332, 10.007991;
+epoch 249 time used: 0  seconds  train loss: 29.931 val rmse: 30.806 test rmse: 10.008
+Epoch 250: 
+|1    Horizon | MAPE: 50.925499, 16.647495; MAE: 26.598932, 9.988497; RMSE: 30.802689, 9.988532;
+epoch 250 time used: 0  seconds  train loss: 29.932 val rmse: 30.803 test rmse: 9.989
+Epoch 251: 
+|1    Horizon | MAPE: 50.908422, 16.688260; MAE: 26.601282, 10.012958; RMSE: 30.801519, 10.013101;
+epoch 251 time used: 0  seconds  train loss: 29.93 val rmse: 30.802 test rmse: 10.013
+Epoch 252: 
+|1    Horizon | MAPE: 50.917935, 16.708107; MAE: 26.613426, 10.024863; RMSE: 30.812643, 10.025001;
+epoch 252 time used: 0  seconds  train loss: 29.932 val rmse: 30.813 test rmse: 10.025
+Epoch 253: 
+|1    Horizon | MAPE: 50.925064, 16.673431; MAE: 26.606441, 10.004059; RMSE: 30.809052, 10.004233;
+epoch 253 time used: 0  seconds  train loss: 29.932 val rmse: 30.809 test rmse: 10.004
+Epoch 254: 
+|1    Horizon | MAPE: 50.921112, 16.683181; MAE: 26.605082, 10.009909; RMSE: 30.807581, 10.009932;
+epoch 254 time used: 0  seconds  train loss: 29.929 val rmse: 30.808 test rmse: 10.01
+Epoch 255: 
+|1    Horizon | MAPE: 50.917464, 16.637786; MAE: 26.599657, 9.982672; RMSE: 30.800655, 9.983861;
+epoch 255 time used: 0  seconds  train loss: 29.933 val rmse: 30.801 test rmse: 9.984
+Epoch 256: 
+|1    Horizon | MAPE: 50.912386, 16.672233; MAE: 26.604729, 10.003339; RMSE: 30.809372, 10.003708;
+epoch 256 time used: 0  seconds  train loss: 29.934 val rmse: 30.809 test rmse: 10.004
+Epoch 257: 
+|1    Horizon | MAPE: 50.918901, 16.665024; MAE: 26.602495, 9.999013; RMSE: 30.805841, 9.999057;
+epoch 257 time used: 0  seconds  train loss: 29.929 val rmse: 30.806 test rmse: 9.999
+Epoch 258: 
+|1    Horizon | MAPE: 50.931275, 16.651903; MAE: 26.606222, 9.991143; RMSE: 30.807009, 9.991158;
+epoch 258 time used: 0  seconds  train loss: 29.932 val rmse: 30.807 test rmse: 9.991
+Epoch 259: 
+|1    Horizon | MAPE: 50.926596, 16.683836; MAE: 26.606283, 10.010301; RMSE: 30.809996, 10.010304;
+epoch 259 time used: 0  seconds  train loss: 29.928 val rmse: 30.81 test rmse: 10.01
+Epoch 260: 
+|1    Horizon | MAPE: 50.909454, 16.675422; MAE: 26.599279, 10.005253; RMSE: 30.800779, 10.005303;
+Early stopping at epoch: 260
+Model  gru  Best Results:
+Best Epoch 160: 
+|1    Horizon | MAPE: 51.043850, 16.701941; MAE: 26.691896, 10.021165; RMSE: 30.854204, 10.094591;
+Model Training Ended ... Tue Nov 15 18:29:40 2022
