@@ -26,8 +26,8 @@ import random
 ################# python input parameters #######################
 parser = argparse.ArgumentParser()
 parser.add_argument('-model', type=str, default='gru', help='choose which model to train and test')  ## 这里默认使用的模型是GRU
-parser.add_argument('-version', type=int, default=0, help='train version')
-parser.add_argument('-instep', type=int, default=70, help='input step')
+parser.add_argument('-version', type=int, default=1, help='train version')
+parser.add_argument('-instep', type=int, default=1, help='input step')
 parser.add_argument('-outstep', type=int, default=1, help='predict step')
 parser.add_argument('-sca', type=int, default=0, help='predict step')
 parser.add_argument('-hc', type=int, default=8, help='hidden channel')
@@ -37,7 +37,7 @@ parser.add_argument('-mode', type=str, default='train', help='train, debug or ev
 parser.add_argument('-data', type=str, default='1',
                     help='choose which ')
 parser.add_argument('-train', type=float, default=0.8, help='train data: 0.8,0.7,0.6,0.5')
-parser.add_argument('-test', type=str, default='60', help='choose which label to be test dataset')  ## 60 作为预测的类型
+parser.add_argument('-test', type=str, default='40', help='choose which label to be test dataset')  ## 60 作为预测的类型
 parser.add_argument('-scaler', type=str, default='zscore', help='data scaler process type, zscore or minmax') ## 归一化
 parser.add_argument('-snorm', type=int, default=1)  # STNorm Hyper Param
 parser.add_argument('-tnorm', type=int, default=1)  # STNorm Hyper Param
@@ -57,7 +57,7 @@ def getModel(name, device):
     loader.exec_module(baseline_py_file)
     ########## select the baseline model ##########
     if args.model == 'gru':
-        model = baseline_py_file.GRU(in_dim=TIMESTEP_IN, out_dim=TIMESTEP_OUT, hidden_layer=args.hc, device=device).to(device)
+        model = baseline_py_file.GRU(in_dim=1, out_dim=1, hidden_layer=args.hc, timestep_in=70,timestep_out=1,num_layers=4,device=device).to(device)
     if args.model == 'lstnet':
         model = baseline_py_file.LSTNet(data_m=N_NODE * CHANNEL, window=TIMESTEP_IN, hidRNN=64, hidCNN=64, CNN_kernel=3,
                                         skip=3, highway_window=TIMESTEP_IN).to(device)
@@ -99,14 +99,14 @@ def getModel(name, device):
 MODELNAME = args.model  ## 传入GRU
 TIMESTEP_IN = args.instep  ## 输入的宽度 70 个
 TIMESTEP_OUT = args.outstep ## 输出的宽度 这里是一个
-path = r'C:\Users\86136\PycharmProjects\pythonProject\zy\save\sensor1_gru_in70_out1_lr0.001_hc8_train0.8_test60_version0'
+path = r'C:\Users\86136\PycharmProjects\pythonProject\zy\save\sensor1_gru_in1_out1_lr0.001_hc8_train0.8_test40_version0'
 model = getModel(MODELNAME, device)
 # model = baseline_py_file.GRU(in_dim=TIMESTEP_IN, out_dim=TIMESTEP_OUT, hidden_layer=args.hc, device=device).to(device)
 model.eval()
 mode = model.load_state_dict(torch.load(path + '/' + 'gru' + '.pt',map_location=device))  ## 模型的cuda 要和本地的显卡匹配起来
 # map_location=torch.device('cpu')
 print(mode)
-data_path = r'C:\Users\86136\PycharmProjects\pythonProject\AI -learn from zero\data\model_test\test50.csv'
+data_path = r'C:\Users\86136\PycharmProjects\pythonProject\AI -learn from zero\data\model_test\test.csv'
 data_test = pd.read_csv(data_path,header=None)
 data = np.array(data_test)
 tor_data = torch.Tensor(data).unsqueeze(-1)

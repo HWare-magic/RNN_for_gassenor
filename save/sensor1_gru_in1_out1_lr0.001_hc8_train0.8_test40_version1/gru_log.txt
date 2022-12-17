@@ -1,0 +1,4 @@
+epoch, 0, time used, 0, seconds, train loss, 50.235, validation rmse:, 52.843, test rmse:, 24.388
+epoch, 1, time used, 0, seconds, train loss, 38.529, validation rmse:, 39.226, test rmse:, 6.633
+epoch, 2, time used, 0, seconds, train loss, 30.108, validation rmse:, 29.786, test rmse:, 13.413
+epoch, 3, time used, 0, seconds, train loss, 25.786, validation rmse:, 29.145, test rmse:, 21.107

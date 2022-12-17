@@ -46,7 +46,7 @@ def main():
     GPU = sys.argv[-1] if len(sys.argv) == 2 else '3'
     device = torch.device("cuda:{}".format(GPU)) if torch.cuda.is_available() else torch.device("cpu")
     N_NODE,TIMESTEP_IN,TIMESTEP_OUT,CHANNEL = 207,12,1,2
-    model = GRU(in_dim=1, out_dim=1, timestep_in =TIMESTEP_IN, timestep_out=TIMESTEP_OUT, num_layers=4, hidden_layer=16, device=device)
+    model = GRU(in_dim=2, out_dim=1, timestep_in =TIMESTEP_IN, timestep_out=TIMESTEP_OUT, num_layers=4, hidden_layer=16, device=device)
     summary(model, (TIMESTEP_IN, N_NODE, CHANNEL), device=device)
     
 if __name__ == '__main__':

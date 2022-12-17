@@ -120,6 +120,7 @@ for j in range(1,5):
             exec('snum{}.append(file_list[i])'.format(j))
     #exec('print(snum{}[0])'.format(j))
     exec('df = pd.read_csv(Folder_Path1 + snum{}[0])'.format(j))
-    for k in range(con_num): ## 每一个文件夹中所包含的文件数  如果对应的测试浓度数数不等于它  需要改掉
+    exec('df.to_csv(SaveFile_Path + \'sensor{}.csv \', encoding="utf_8_sig", index=False)'.format(j))
+    for k in range(1,con_num): ## 每一个文件夹中所包含的文件数  如果对应的测试浓度数数不等于它  需要改掉
             exec('df = pd.read_csv(Folder_Path1 +  snum{}[k])'.format(j))
-            exec('df.to_csv(SaveFile_Path + \'sensor{}.csv \',encoding="utf_8_sig",index=False, header=False, mode=\'a+\')'.format(j))
+            exec('df.to_csv(SaveFile_Path + \'sensor{}.csv \',encoding="utf_8_sig",index=False,header=False,mode=\'a+\')'.format(j))

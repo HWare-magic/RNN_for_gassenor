@@ -26,8 +26,8 @@ import random
 ################# python input parameters #######################
 parser = argparse.ArgumentParser()
 parser.add_argument('-model', type=str, default='gru', help='choose which model to train and test')  ## 这里默认使用的模型是GRU
-parser.add_argument('-version', type=int, default=0, help='train version')
-parser.add_argument('-instep', type=int, default=70, help='input step')
+parser.add_argument('-version', type=int, default=1, help='train version')
+parser.add_argument('-instep', type=int, default=1, help='input step')
 parser.add_argument('-outstep', type=int, default=1, help='predict step')
 parser.add_argument('-sca', type=int, default=0, help='predict step')
 parser.add_argument('-hc', type=int, default=8, help='hidden channel')
@@ -37,7 +37,8 @@ parser.add_argument('-mode', type=str, default='train', help='train, debug or ev
 parser.add_argument('-data', type=str, default='1',
                     help='choose which ')
 parser.add_argument('-train', type=float, default=0.8, help='train data: 0.8,0.7,0.6,0.5')
-parser.add_argument('-test', type=str, default='60', help='choose which label to be test dataset')  ## 60 作为预测的类型
+parser.add_argument('-test', type=str, default='40', help='choose which label to be test dataset')  ## 60 作为预测的类型
+# parser.add_argument('-test', type=list, default=[40], help='choose which label to be test dataset')
 parser.add_argument('-scaler', type=str, default='zscore', help='data scaler process type, zscore or minmax') ## 归一化
 parser.add_argument('-snorm', type=int, default=1)  # STNorm Hyper Param 
 parser.add_argument('-tnorm', type=int, default=1)  # STNorm Hyper Param 
@@ -47,7 +48,7 @@ args = parser.parse_args()  # python  args.参数名:可以获取传入的参数
 device = torch.device("cuda:{}".format(args.cuda)) if torch.cuda.is_available() else torch.device("cpu")
 ################# data selection #######################
 if args.data == '1': ## 读了sensor1的数据
-    DATAPATH = './data/sensordata2/sensor' + args.data + '.csv'
+    DATAPATH = './data/sensordata_v3/sensor' + args.data + '.csv'
     data = pd.read_csv(DATAPATH,index_col=0)
     DATANAME = 'sensor' + args.data
 ################# Global Parameters setting #######################   
@@ -56,8 +57,8 @@ BATCHSIZE = args.batch  ##  32
 EPOCH = args.epoch  ## 默认2000
 if args.mode=='debug':   ## 如果是debug 模式 那么 epoch = 1
     EPOCH=1
-TIMESTEP_IN = args.instep  ## 输入的宽度 70 个
-TIMESTEP_OUT = args.outstep ## 输出的宽度 这里是一个
+TIMESTEP_IN = 70  ## 输入的宽度 70 个
+TIMESTEP_OUT = 1 ## 输出的宽度 这里是一个
 SCA = bool(args.sca)  ## 这个参数未知
 snorm_bool = bool(args.snorm)  # STNorm Hyper Param
 tnorm_bool = bool(args.tnorm)  # STNorm Hyper Param
@@ -72,7 +73,7 @@ CHANNEL = int(common_config['CHANNEL'])  # 1
 LEARNING_RATE = 0.001
 # PATIENCE = int(common_config['PATIENCE'])   # 10
 PRINT_EPOCH = 1
-PATIENCE = 100  ## 耐心值 是啥
+PATIENCE = 2000  ## 耐心值 是啥
 OPTIMIZER = 'Adam'#str(common_config['OPTIMIZER'])  # Adam
 LOSS = str(common_config['LOSS'])  # MAE
 # TRAIN = float(common_config['TRAIN']) # 0.8
@@ -107,6 +108,8 @@ def get_inputdata(data, test, if_stats=False, if_scaler =False):  ## 这里读�
     test = test.split(',')
     trainval_data = data[~data['label(ppm)'].isin(list(map(float, test)))].values[:,:,np.newaxis,np.newaxis] # [samples, 70, 1, 1]
     test_data = data[data['label(ppm)'].isin(list(map(float, test)))].values[:,:,np.newaxis,np.newaxis]   # [samples, 70, 1, 1]
+    # trainval_data = data[~data['label(ppm)'].isin(test)].values[:, :, np.newaxis, np.newaxis]
+    # test_data = data[data['label(ppm)'].isin(test)].values[:, :, np.newaxis, np.newaxis]
     data_index=[i for i in range(trainval_data.shape[0])]
     random.shuffle(data_index)
     train_xy = trainval_data[data_index[:int(0.8*trainval_data.shape[0])]]
@@ -147,7 +150,7 @@ def getModel(name, device):
     loader.exec_module(baseline_py_file)
     ########## select the baseline model ##########
     if args.model == 'gru':
-        model = baseline_py_file.GRU(in_dim=TIMESTEP_IN, out_dim=TIMESTEP_OUT, hidden_layer=args.hc, device=device).to(device)
+        model = baseline_py_file.GRU(in_dim=1, out_dim=1, hidden_layer=args.hc, timestep_in=70,timestep_out=1,num_layers=4,device=device).to(device) ## hidden_layer = dim
     if args.model == 'lstnet':
         model = baseline_py_file.LSTNet(data_m=N_NODE * CHANNEL, window=TIMESTEP_IN, hidRNN=64, hidCNN=64, CNN_kernel=3,
                                         skip=3, highway_window=TIMESTEP_IN).to(device)
@@ -319,7 +322,7 @@ def multi_version_test(name, device, train, versions,if_stats=False,if_scaler=Fa
         print('Under Train Strategy --- ', tr, ' ---:')
         for v_ in versions:
             print('--- version ', v_, ' evaluation start ---')
-            multi_test_PATH = "./save/{}_{}_in{}_out{}_lr{}_hc{}_train{}_test{}_version{}/{}.pt".format(DATANAME,
+            multi_test_PATH = "./save/{}_new{}_in{}_out{}_lr{}_hc{}_train{}_test{}_version{}/{}.pt".format(DATANAME,
                                                                                                           args.model,
                                                                                                           args.instep,
                                                                                                           args.outstep,
