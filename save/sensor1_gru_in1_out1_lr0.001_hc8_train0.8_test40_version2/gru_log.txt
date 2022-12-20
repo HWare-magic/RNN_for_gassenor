@@ -1,0 +1,7 @@
+epoch, 0, time used, 0, seconds, train loss, 58.111, validation rmse:, 63.598, test rmse:, 38.574
+epoch, 1, time used, 0, seconds, train loss, 51.527, validation rmse:, 51.252, test rmse:, 24.221
+epoch, 2, time used, 0, seconds, train loss, 37.924, validation rmse:, 35.944, test rmse:, 3.101
+epoch, 3, time used, 0, seconds, train loss, 28.681, validation rmse:, 29.136, test rmse:, 16.960
+epoch, 4, time used, 0, seconds, train loss, 25.602, validation rmse:, 29.201, test rmse:, 20.277
+epoch, 0, time used, 0, seconds, train loss, 56.654, validation rmse:, 60.217, test rmse:, 34.044
+epoch, 0, time used, 0, seconds, train loss, 53.601, validation rmse:, 56.010, test rmse:, 28.349

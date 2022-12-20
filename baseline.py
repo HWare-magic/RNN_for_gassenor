@@ -26,7 +26,7 @@ import random
 ################# python input parameters #######################
 parser = argparse.ArgumentParser()
 parser.add_argument('-model', type=str, default='gru', help='choose which model to train and test')  ## 这里默认使用的模型是GRU
-parser.add_argument('-version', type=int, default=1, help='train version')
+parser.add_argument('-version', type=int, default=2, help='train version')
 parser.add_argument('-instep', type=int, default=1, help='input step')
 parser.add_argument('-outstep', type=int, default=1, help='predict step')
 parser.add_argument('-sca', type=int, default=0, help='predict step')
@@ -73,9 +73,9 @@ CHANNEL = int(common_config['CHANNEL'])  # 1
 LEARNING_RATE = 0.001
 # PATIENCE = int(common_config['PATIENCE'])   # 10
 PRINT_EPOCH = 1
-PATIENCE = 2000  ## 耐心值 是啥
+PATIENCE = 200  ## 耐心值 是啥
 OPTIMIZER = 'Adam'#str(common_config['OPTIMIZER'])  # Adam
-LOSS = str(common_config['LOSS'])  # MAE
+LOSS = 'MSE'# str(common_config['LOSS'])  # MAE
 # TRAIN = float(common_config['TRAIN']) # 0.8
 TRAIN = args.train ## 训练数据的比重  这里是0.8
 VAL = 1-TRAIN
@@ -86,8 +86,8 @@ TEST=args.test
 np.random.seed(77)  # for reproducibility
 torch.backends.cudnn.benchmark = False
 ################# System Parameter Setting #######################
-PATH = "./save/{}_{}_in{}_out{}_lr{}_hc{}_train{}_test{}_version".format(DATANAME, args.model, args.instep,
-                                                                           args.outstep, LEARNING_RATE, args.hc, TRAIN,
+PATH = "./save/{}_{}_in{}_out{}_lr{}_loss{}_hc{}_train{}_test{}_version".format(DATANAME, args.model, args.instep,
+                                                                           args.outstep, LEARNING_RATE, LOSS,args.hc, TRAIN,
                                                                            TEST) ## HC 表示hidden channel 这里默认是8
 single_version_PATH = PATH + str(args.version)  ## 单版本的路径
 multi_version_PATH = PATH + '0to4'
@@ -112,15 +112,15 @@ def get_inputdata(data, test, if_stats=False, if_scaler =False):  ## 这里读�
     # test_data = data[data['label(ppm)'].isin(test)].values[:, :, np.newaxis, np.newaxis]
     data_index=[i for i in range(trainval_data.shape[0])]
     random.shuffle(data_index)
-    train_xy = trainval_data[data_index[:int(0.8*trainval_data.shape[0])]]
-    val_xy = trainval_data[data_index[int(0.8*trainval_data.shape[0]):]]
+    train_xy = trainval_data[data_index[:int(0.8*trainval_data.shape[0])]]   ## 取前百分80最为训练集
+    val_xy = trainval_data[data_index[int(0.8*trainval_data.shape[0]):]]     ## 后百分20作为验证集
     test_xy = test_data
     if if_stats == True:
         train_mean, train_std = np.mean(trainval_data, axis=(0,1)), np.std(trainval_data, axis=(0,1))
         x_stats = {'mean': train_mean, 'std': train_std}
     if if_stats == False:
         x_stats = None
-    seq_data = {'train': train_xy, 'val': val_xy, 'test': test_xy}   
+    seq_data = {'train': train_xy, 'val': val_xy, 'test': test_xy}  ## 这里就输出了seq data 中的三个数据集
     if if_scaler == True:
         for key in seq_data.keys():
             seq_data[key][:, 0:TIMESTEP_IN, :, :] = lib.Utils.z_score(seq_data[key][:, 0:TIMESTEP_IN, :, :],
@@ -130,6 +130,7 @@ def get_inputdata(data, test, if_stats=False, if_scaler =False):  ## 这里读�
 
 def torch_data_loader(device, data, data_type, shuffle=True):
     x = torch.Tensor(data[data_type][:, 0:TIMESTEP_IN, :, :]).to(device)  # [B,T=TIMESTEP_IN,N=sensor_number,C=in_dim = 这里默认为1]
+    # x = torch.Tensor(data[data_type][:, TIMESTEP_IN:TIMESTEP_IN+1, :, :1]).to(device)
     if args.model == 'LSTNet':
         y = torch.Tensor(data[data_type][:, TIMESTEP_IN + TIMESTEP_OUT - 1:TIMESTEP_IN + TIMESTEP_OUT, :, :]).to(
             device)  # [B,T=TIMESTEP_OUT,N,C]
@@ -218,12 +219,12 @@ def model_inference(model, val_iter, test_iter, x_stats, save=False, if_scaler=F
         return val_mse, val_rmse, val_mae, val_mape, test_mse, test_rmse, test_mae, test_mape
 
 
-def trainModel(name, device, data, x_stats, if_stats=False, if_scaler =False):
+def trainModel(name, device, data, x_stats, if_stats=False, if_scaler =False):   ## data = seq_data
     mode = 'Train'
     print('Model Training Started ...', time.ctime())
     print('TIMESTEP_IN, TIMESTEP_OUT', TIMESTEP_IN, TIMESTEP_OUT)
     model = getModel(name, device) 
-    summary(model, (TIMESTEP_IN, N_NODE, CHANNEL), device=device)
+    summary(model, (TIMESTEP_IN, N_NODE, CHANNEL), device=device)     # 第一个初始化是的b= 2
     train_iter = torch_data_loader(device, data, data_type='train', shuffle=True)
     val_iter = torch_data_loader(device, data, data_type='val', shuffle=True)
     test_iter = torch_data_loader(device, data, data_type='test', shuffle=False)
@@ -403,7 +404,7 @@ def main():
         print(single_version_PATH, 'training started', time.ctime())
         seq_data, x_stats = get_inputdata(data, TEST, if_stats=SCA, if_scaler =SCA)
         for key in seq_data.keys():
-            print(key, ' : ', seq_data[key].shape)
+            print(key, ' : ', seq_data[key].shape)  ##打印出每个数据集的含量
         trainModel(MODELNAME, device, seq_data, x_stats, if_stats=SCA, if_scaler =SCA)
     if args.mode == 'eval0':  # eval in multi version
         print(single_version_PATH, 'single version ', args.version, ' testing started', time.ctime())

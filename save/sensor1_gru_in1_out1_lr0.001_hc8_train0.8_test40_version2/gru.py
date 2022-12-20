@@ -16,7 +16,7 @@ class GRU(nn.Module):
         self.hidden_layer = hidden_layer  ## 这里应该是hidden_dim
         self.num_layers = num_layers
         self.gru = torch.nn.GRU(in_dim, hidden_layer, self.num_layers, batch_first=True)
-        self.fc1 = torch.nn.Linear(timestep_in, timestep_out) ## linner 的输入和输出
+        self.fc1 = torch.nn.Linear(timestep_in, timestep_out)
         self.fc2 = torch.nn.Linear(hidden_layer, out_dim)
 
 
@@ -28,25 +28,25 @@ class GRU(nn.Module):
         
         x = torch.reshape(x,(b*n,t,c)) # b,n,t,c ---> b*n,t,c
 #         x = x[:,:,:,0].permute(0,2,1) # [B,T,N,C] > [B,N,T]
-#         print('x shape is ', x.shape)
+        print('x shape is ', x.shape)
         batch = x.shape[0]
         h_0 = torch.randn(size = (self.num_layers, batch, self.hidden_layer)).to(self.device)
         # print('x shape2 is ', x.shape)
         output, h1 = self.gru(x, h_0)
-        # print('output shape is : ',output.shape)  # torch.Size([32, 70, 8]) 第一个的batchsize =2 是因为summary函数中默认为2
-        # print('h1 shape is : ',h1.shape)  # torch.Size([4, 32, 8])
+        print('output shape is : ',output.shape)  # torch.Size([32, 70, 8]) 第一个的batchsize =2 是因为summary函数中默认为2
+        print('h1 shape is : ',h1.shape)  # torch.Size([4, 32, 8])
         out = self.fc1(output.permute(0,2,1)) # torch.Size([32, 8, 1])
-        # print('fc1 shape is ', out.shape)
+        print('fc1 shape is ', out.shape)
         out = self.fc2(out.permute(0,2,1))  #torch.Size([32, 1, 1])
-        # print('out is : ',out.shape)
+        print('out is : ',out.shape)
         out = torch.reshape(out, (b,n,1,1)).permute(0,2,1,3) 
-        # print('final out shape is: ',out.shape)  #torch.Size([32,1,1,1])
+        print('final out shape is: ',out.shape)  #torch.Size([32,1,1,1])
         return out
     
 def main():
     GPU = sys.argv[-1] if len(sys.argv) == 2 else '3'
     device = torch.device("cuda:{}".format(GPU)) if torch.cuda.is_available() else torch.device("cpu")
-    N_NODE,TIMESTEP_IN,TIMESTEP_OUT,CHANNEL = 1,70,1,1
+    N_NODE,TIMESTEP_IN,TIMESTEP_OUT,CHANNEL = 207,12,1,2
     model = GRU(in_dim=1, out_dim=1, timestep_in =TIMESTEP_IN, timestep_out=TIMESTEP_OUT, num_layers=4, hidden_layer=16, device=device)
     summary(model, (TIMESTEP_IN, N_NODE, CHANNEL), device=device)
     
