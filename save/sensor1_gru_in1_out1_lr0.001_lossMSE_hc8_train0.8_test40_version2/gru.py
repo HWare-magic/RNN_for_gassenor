@@ -22,6 +22,8 @@ class GRU(nn.Module):
 
 
     def forward(self, x):
+        x_r = x[:,70:71,:,:] ## 70 为 timestep_in
+        x = x[:,0:70,:,:]
         b,t,n,c = x.shape
         x = x.permute(0,2,1,3)  # b,t,n,c ---> b,n,t,c
         # print('x shape1 is ', x.shape)

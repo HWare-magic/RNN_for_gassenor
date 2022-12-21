@@ -18,14 +18,19 @@ class GRU(nn.Module):
         self.gru = torch.nn.GRU(in_dim, hidden_layer, self.num_layers, batch_first=True)
         self.fc1 = torch.nn.Linear(timestep_in, timestep_out) ## linner 的输入和输出
         self.fc2 = torch.nn.Linear(hidden_layer, out_dim)
+        self.fc3 = torch.nn.Linear(out_dim+1, out_dim)
 
 
 
     def forward(self, x):
+        x_r = x[:,-1,:,:] ## 70 为 timestep_in
+        # print(x_r.shape)
+        # print(x_r)
+        x = x[:,0:70,:,:]
         b,t,n,c = x.shape
         x = x.permute(0,2,1,3)  # b,t,n,c ---> b,n,t,c
         # print('x shape1 is ', x.shape)
-        
+        x_r = torch.reshape(x_r, (b,1,c))
         x = torch.reshape(x,(b*n,t,c)) # b,n,t,c ---> b*n,t,c
 #         x = x[:,:,:,0].permute(0,2,1) # [B,T,N,C] > [B,N,T]
 #         print('x shape is ', x.shape)
@@ -39,6 +44,8 @@ class GRU(nn.Module):
         # print('fc1 shape is ', out.shape)
         out = self.fc2(out.permute(0,2,1))  #torch.Size([32, 1, 1])
         # print('out is : ',out.shape)
+        out = torch.cat((out,x_r),1)
+        out = self.fc3(out.permute(0,2,1))
         out = torch.reshape(out, (b,n,1,1)).permute(0,2,1,3) 
         # print('final out shape is: ',out.shape)  #torch.Size([32,1,1,1])
         return out
