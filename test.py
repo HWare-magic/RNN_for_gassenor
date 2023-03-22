@@ -99,14 +99,14 @@ def getModel(name, device):
 MODELNAME = args.model  ## 传入GRU
 TIMESTEP_IN = args.instep  ## 输入的宽度 70 个
 TIMESTEP_OUT = args.outstep ## 输出的宽度 这里是一个
-path = r'C:\Users\86136\PycharmProjects\pythonProject\zy\save\sensor1_gru_in1_out1_lr0.001_loss8_hcMSE_train0.8_test40_version2'
+path = r'C:\Users\86136\PycharmProjects\pythonProject\zy\save\sensor4_gru_in1_out1_lr0.001_lossMSE_hc8_train0.8_test40_version6'
 model = getModel(MODELNAME, device)
 # model = baseline_py_file.GRU(in_dim=TIMESTEP_IN, out_dim=TIMESTEP_OUT, hidden_layer=args.hc, device=device).to(device)
 model.eval()
 mode = model.load_state_dict(torch.load(path + '/' + 'gru' + '.pt',map_location=device))  ## 模型的cuda 要和本地的显卡匹配起来
 # map_location=torch.device('cpu')
 print(mode)
-data_path = r'C:\Users\86136\PycharmProjects\pythonProject\AI -learn from zero\data\model_test\test60.csv'
+data_path = r'C:\Users\86136\PycharmProjects\pythonProject\AI -learn from zero\data\model_test\test40.csv'
 data_test = pd.read_csv(data_path,header=None)
 data = np.array(data_test)
 tor_data = torch.Tensor(data).unsqueeze(-1)

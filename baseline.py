@@ -23,16 +23,28 @@ import lib.Metrics
 import lib.Utils
 import random 
 
+def seed_torch(seed=77):
+    seed = int(seed)
+    random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.enabled = True
+
 ################# python input parameters #######################
 parser = argparse.ArgumentParser()
-parser.add_argument('-model', type=str, default='gru', help='choose which model to train and test')  ## 这里默认使用的模型是GRU
-parser.add_argument('-version', type=int, default=2, help='train version')
-parser.add_argument('-instep', type=int, default=1, help='input step')
+parser.add_argument('-model', type=str, default='gru_bt', help='choose which model to train and test')  ## 这里默认使用的模型是GRU
+parser.add_argument('-version', type=int, default=8, help='train version')
+parser.add_argument('-instep', type=int, default=70, help='input step')
 parser.add_argument('-outstep', type=int, default=1, help='predict step')
 parser.add_argument('-sca', type=int, default=0, help='predict step')
 parser.add_argument('-hc', type=int, default=8, help='hidden channel')
 parser.add_argument('-batch', type=int, default=32, help='batch size')  ## batch size 32
-parser.add_argument('-epoch', type=int, default=500, help='training epochs')
+parser.add_argument('-epoch', type=int, default=200, help='training epochs')
 parser.add_argument('-mode', type=str, default='train', help='train, debug or eval')  ## mode 有三种模式 训练 debug 和 评估
 parser.add_argument('-data', type=str, default='4',
                     help='choose which ')
@@ -48,7 +60,7 @@ args = parser.parse_args()  # python  args.参数名:可以获取传入的参数
 device = torch.device("cuda:{}".format(args.cuda)) if torch.cuda.is_available() else torch.device("cpu")
 ################# data selection #######################
 if args.data == '4': ## 读了sensor1的数据
-    DATAPATH = './data/with_rate/sensor' + args.data + '_rate'+'.csv'
+    DATAPATH = './data/with_rate/with_rate_oldversion/sensor' + args.data + '_rate'+'.csv'  #
     data = pd.read_csv(DATAPATH,index_col=0)
     DATANAME = 'sensor' + args.data
 
@@ -90,7 +102,8 @@ TEST=args.test
 ################# random seed setting #######################
 # torch.manual_seed(100)
 # torch.cuda.manual_seed(100)
-np.random.seed(77)  # for reproducibility
+#np.random.seed(77)  # for reproducibility
+seed_torch(seed=42)
 torch.backends.cudnn.benchmark = False
 ################# System Parameter Setting #######################
 PATH = "./save/{}_{}_in{}_out{}_lr{}_loss{}_hc{}_train{}_test{}_version".format(DATANAME, args.model, args.instep,
@@ -157,7 +170,7 @@ def getModel(name, device):
     baseline_py_file = importlib.util.module_from_spec(spec)
     loader.exec_module(baseline_py_file)
     ########## select the baseline model ##########
-    if args.model == 'gru':
+    if args.model == 'gru_bt':
         model = baseline_py_file.GRU(in_dim=1, out_dim=1, hidden_layer=args.hc, timestep_in=70,timestep_out=1,num_layers=4,device=device).to(device) ## hidden_layer = dim
     if args.model == 'lstnet':
         model = baseline_py_file.LSTNet(data_m=N_NODE * CHANNEL, window=TIMESTEP_IN, hidRNN=64, hidCNN=64, CNN_kernel=3,
